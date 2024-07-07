@@ -12,20 +12,20 @@ import OrderedCollections
 
 class TrayDrop: ObservableObject {
     static let shared = TrayDrop()
-    
+
     static let keepInterval = TimeInterval(60 * 60 * 24 * 7)
-    
+
     private init() {
         cleanExpiredFiles()
     }
-    
+
     var isEmpty: Bool { items.isEmpty }
-    
+
     @PublishedPersist(key: "TrayDropItems", defaultValue: .init())
     var items: OrderedSet<DropItem>
-    
+
     @Published var isLoading: Int = 0
-    
+
     func load(_ providers: [NSItemProvider]) {
         assert(!Thread.isMainThread)
         DispatchQueue.main.asyncAndWait { isLoading += 1 }
@@ -51,7 +51,7 @@ class TrayDrop: ObservableObject {
             }
         }
     }
-    
+
     func cleanExpiredFiles() {
         var inEdit = items
         let shouldCleanItems = items.filter(\.shouldClean)
@@ -61,22 +61,22 @@ class TrayDrop: ObservableObject {
         }
         items = inEdit
     }
-    
+
     func delete(_ item: DropItem.ID) {
         guard let item = items.first(where: { $0.id == item }) else { return }
         delete(item: item)
     }
-    
+
     private func delete(item: DropItem) {
         var inEdit = items
-        
+
         var url = item.duplicatedURL
         try? FileManager.default.removeItem(at: url)
-        
+
         do {
             // loops up to the main directory
             url = url.deletingLastPathComponent()
-            while url.lastPathComponent != DropItem.mainDir && url != documentsDirectory {
+            while url.lastPathComponent != DropItem.mainDir, url != documentsDirectory {
                 let contents = try FileManager.default.contentsOfDirectory(atPath: url.path)
                 guard contents.isEmpty else { break }
                 try FileManager.default.removeItem(at: url)
@@ -85,7 +85,7 @@ class TrayDrop: ObservableObject {
         } catch {
             print("[*] failed to clean up \(url)")
         }
-        
+
         inEdit.remove(item)
         items = inEdit
     }

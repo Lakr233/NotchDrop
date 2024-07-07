@@ -43,7 +43,7 @@ extension TrayDrop {
 
 extension TrayDrop.DropItem {
     static let mainDir = "CopiedItems"
-    
+
     var duplicatedURL: URL {
         documentsDirectory
             .appendingPathComponent(Self.mainDir)

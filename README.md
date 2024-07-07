@@ -18,6 +18,20 @@ Transform your MacBook's notch into a convenient file drop zone.
 - [x] Fully open source and privacy-focused
 - [x] Free of charge
 
+## 🚀 Usage
+
+Download the latest version from [Releases](https://github.com/Lakr233/NotchDrop/releases).
+
+If your system doesn't allow you to open the app, hold the Control key, click the app, and select Open.
+
+To close the app, execute the following command in the terminal:
+
+```shell
+pkill NotchDrop
+```
+
+Alternatively, you can use the [Command File](./Resources/KillNotchDrop.command) provided in the Resources folder.
+
 ## 🧑‍⚖️ License
 
 [MIT License](./LICENSE)
