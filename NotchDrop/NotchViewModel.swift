@@ -10,10 +10,12 @@ import Combine
 import Foundation
 import SwiftUI
 
-class NotchViewModel: ObservableObject {
+class NotchViewModel: NSObject, ObservableObject {
     var cancellables: Set<AnyCancellable> = []
 
-    init() {
+    override init() {
+        super.init()
+
         setupCancellables()
     }
 
@@ -27,9 +29,7 @@ class NotchViewModel: ObservableObject {
         extraBounce: 0.25,
         blendDuration: 0.125
     )
-
     let notchOpenedSize: CGSize = .init(width: 600, height: 150)
-
     let dropDetectorRange: CGFloat = 32
 
     enum Status {
@@ -47,11 +47,6 @@ class NotchViewModel: ObservableObject {
 
     var openedBy: OpenedBy = .unknown
 
-    @Published private(set) var status: Status = .closed
-
-    @Published var spacing: CGFloat = 16
-    @Published var cornerRadius: CGFloat = 16
-
     var notchOpenedRect: CGRect {
         .init(
             x: screenRect.width / 2 - notchOpenedSize.width / 2,
@@ -61,11 +56,13 @@ class NotchViewModel: ObservableObject {
         )
     }
 
+    @Published private(set) var status: Status = .closed
+    @Published var spacing: CGFloat = 16
+    @Published var cornerRadius: CGFloat = 16
     @Published var deviceNotchRect: CGRect = .zero
-
     @Published var screenRect: CGRect = .zero
-
     @Published var optionKeyPressed: Bool = false
+    @Published var notchVisible: Bool = true
 
     func notchOpen(_ by: OpenedBy) {
         openedBy = by

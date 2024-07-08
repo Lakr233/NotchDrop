@@ -34,6 +34,8 @@
 		5044EEAD2C3B174100071C5C /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAC2C3B174100071C5C /* HashTreeCollections */; };
 		5044EEAF2C3B174100071C5C /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAE2C3B174100071C5C /* HeapModule */; };
 		50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */; };
+		50D5366B2C3BF06C001BBC2A /* .bartycrouch.toml in Resources */ = {isa = PBXBuildFile; fileRef = 50D5366A2C3BF06C001BBC2A /* .bartycrouch.toml */; };
+		50D5366E2C3BF088001BBC2A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50D5366C2C3BF088001BBC2A /* Localizable.strings */; };
 		50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E242C3AF2F1007CF247 /* AirDrop.swift */; };
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
 		50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */; };
@@ -62,6 +64,9 @@
 		5044EEA12C3B126F00071C5C /* TrayDrop+DropItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItemView.swift"; sourceTree = "<group>"; };
 		5044EEA32C3B140F00071C5C /* Ext+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+URL.swift"; sourceTree = "<group>"; };
 		50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotchViewModel+Events.swift"; sourceTree = "<group>"; };
+		50D5366A2C3BF06C001BBC2A /* .bartycrouch.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .bartycrouch.toml; sourceTree = "<group>"; };
+		50D5366D2C3BF088001BBC2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50D5366F2C3BF0D7001BBC2A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		50E26E242C3AF2F1007CF247 /* AirDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrop.swift; sourceTree = "<group>"; };
 		50E26E262C3AF5E9007CF247 /* TrayDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayDrop.swift; sourceTree = "<group>"; };
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
@@ -105,7 +110,9 @@
 		504381822C3A86EA000ED325 /* NotchDrop */ = {
 			isa = PBXGroup;
 			children = (
+				50D5366A2C3BF06C001BBC2A /* .bartycrouch.toml */,
 				5043818C2C3A86EC000ED325 /* NotchDrop.entitlements */,
+				50D5366C2C3BF088001BBC2A /* Localizable.strings */,
 				504381872C3A86EC000ED325 /* Assets.xcassets */,
 				504381922C3A8755000ED325 /* main.swift */,
 				5043819A2C3A8A06000ED325 /* AppDelegate.swift */,
@@ -191,6 +198,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 504381772C3A86EA000ED325;
 			packageReferences = (
@@ -213,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				504381882C3A86EC000ED325 /* Assets.xcassets in Resources */,
+				50D5366E2C3BF088001BBC2A /* Localizable.strings in Resources */,
+				50D5366B2C3BF06C001BBC2A /* .bartycrouch.toml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,12 +260,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		50D5366C2C3BF088001BBC2A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50D5366D2C3BF088001BBC2A /* en */,
+				50D5366F2C3BF0D7001BBC2A /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		5043818D2C3A86EC000ED325 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -319,6 +342,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -377,7 +401,7 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -390,7 +414,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -406,7 +430,7 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -419,7 +443,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

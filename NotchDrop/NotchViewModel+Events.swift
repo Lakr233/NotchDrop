@@ -106,6 +106,19 @@ extension NotchViewModel {
             }
         }
         .store(in: &cancellables)
+
+        $status
+            .filter { $0 != .closed }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.notchVisible = true }
+            .store(in: &cancellables)
+
+        $status
+            .debounce(for: 0.5, scheduler: DispatchQueue.global())
+            .filter { $0 == .closed }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.notchVisible = false }
+            .store(in: &cancellables)
     }
 
     func destroy() {

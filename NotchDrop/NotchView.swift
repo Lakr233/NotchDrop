@@ -45,6 +45,7 @@ struct NotchView: View {
             notch
                 .zIndex(0)
                 .disabled(true)
+                .opacity(vm.notchVisible ? 1 : 0)
             Group {
                 if vm.status == .opened {
                     VStack(spacing: vm.spacing) {

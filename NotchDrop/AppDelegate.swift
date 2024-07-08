@@ -40,10 +40,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard let mainScreen = NSScreen.buildin, mainScreen.notchSize != .zero else {
             if isFirstOpen {
                 let alert = NSAlert()
-                alert.messageText = "Error"
+                alert.messageText = NSLocalizedString("Error", comment: "")
                 alert.alertStyle = .critical
-                alert.informativeText = "You dont have a notch screen"
-                alert.addButton(withTitle: "OK")
+                alert.informativeText = NSLocalizedString("Your current screen does not have a notch", comment: "")
+                alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
                 alert.runModal()
             }
             return

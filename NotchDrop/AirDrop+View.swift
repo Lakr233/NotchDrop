@@ -59,7 +59,7 @@ struct AirDropView: View {
     var dropLabel: some View {
         VStack(spacing: 8) {
             Image(systemName: "airplayaudio")
-            Text("AirDrop")
+            Text(NSLocalizedString("AirDrop", comment: ""))
         }
         .font(.system(.headline, design: .rounded))
         .contentShape(Rectangle())

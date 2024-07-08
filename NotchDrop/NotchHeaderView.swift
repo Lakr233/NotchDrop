@@ -12,9 +12,9 @@ struct NotchHeaderView: View {
 
     var body: some View {
         HStack {
-            Text("Notch Drop")
+            Text(NSLocalizedString("Notch Drop", comment: ""))
             Spacer()
-            Text("GitHub Logo")
+            Text(NSLocalizedString("GitHub", comment: ""))
                 .hidden()
                 .overlay {
                     Image(.gitHub)
