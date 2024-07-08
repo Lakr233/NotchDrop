@@ -39,6 +39,7 @@
 		50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E242C3AF2F1007CF247 /* AirDrop.swift */; };
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
 		50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */; };
+		50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		50E26E242C3AF2F1007CF247 /* AirDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrop.swift; sourceTree = "<group>"; };
 		50E26E262C3AF5E9007CF247 /* TrayDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayDrop.swift; sourceTree = "<group>"; };
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
+		50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				5044EE982C3B069200071C5C /* TrayDrop+View.swift */,
 				5044EEA12C3B126F00071C5C /* TrayDrop+DropItemView.swift */,
 				5044EEA32C3B140F00071C5C /* Ext+URL.swift */,
+				50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */,
 				504381A12C3A8BE0000ED325 /* Ext+NSScreen.swift */,
 				5044EE9D2C3B0F3D00071C5C /* Ext+FileProvider.swift */,
 				5044EE9F2C3B116000071C5C /* PublishedPersist.swift */,
@@ -237,6 +240,7 @@
 				5044EEA22C3B126F00071C5C /* TrayDrop+DropItemView.swift in Sources */,
 				504381AF2C3ADFF2000ED325 /* NotchContentView.swift in Sources */,
 				504381A02C3A8BA1000ED325 /* NotchView.swift in Sources */,
+				50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */,
 				50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */,
 				5044EE9E2C3B0F3D00071C5C /* Ext+FileProvider.swift in Sources */,
 				504381A42C3A8C7E000ED325 /* NotchWindowController.swift in Sources */,

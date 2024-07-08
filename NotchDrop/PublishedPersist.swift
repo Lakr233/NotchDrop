@@ -13,18 +13,25 @@ protocol PersistProvider {
     func set(_ data: Data?, forKey: String)
 }
 
-class UserDefaultPersistProvider: PersistProvider {
-    func data(forKey: String) -> Data? {
-        UserDefaults.standard.data(forKey: forKey)
-    }
-
-    func set(_ data: Data?, forKey: String) {
-        UserDefaults.standard.set(data, forKey: forKey)
-    }
-}
-
 private let valueEncoder = JSONEncoder()
 private let valueDecoder = JSONDecoder()
+private let configDir = documentsDirectory
+    .appendingPathComponent("Config")
+
+class FileStorage: PersistProvider {
+    func pathForKey(_ key: String) -> URL {
+        try? FileManager.default.createDirectory(at: configDir, withIntermediateDirectories: true)
+        return configDir.appendingPathComponent(key)
+    }
+
+    func data(forKey key: String) -> Data? {
+        try? Data(contentsOf: pathForKey(key))
+    }
+
+    func set(_ data: Data?, forKey key: String) {
+        try? data?.write(to: pathForKey(key))
+    }
+}
 
 @propertyWrapper
 struct Persist<Value: Codable> {
@@ -91,12 +98,12 @@ struct PublishedPersist<Value: Codable> {
 
 extension Persist {
     init(key: String, defaultValue: Value) {
-        self.init(key: key, defaultValue: defaultValue, engine: UserDefaultPersistProvider())
+        self.init(key: key, defaultValue: defaultValue, engine: FileStorage())
     }
 }
 
 extension PublishedPersist {
     init(key: String, defaultValue: Value) {
-        self.init(key: key, defaultValue: defaultValue, engine: UserDefaultPersistProvider())
+        self.init(key: key, defaultValue: defaultValue, engine: FileStorage())
     }
 }

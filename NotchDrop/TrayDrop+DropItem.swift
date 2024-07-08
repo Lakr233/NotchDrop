@@ -28,7 +28,7 @@ extension TrayDrop {
             size = (try? url.resourceValues(forKeys: [.fileSizeKey]))?.fileSize ?? 0
             originalURL = url
             copiedDate = Date()
-            workspacePreviewImageData = url.snapshotPreview().tiffRepresentation ?? .init()
+            workspacePreviewImageData = url.snapshotPreview().pngRepresentation
 
             try FileManager.default.createDirectory(
                 at: duplicatedURL.deletingLastPathComponent(),
