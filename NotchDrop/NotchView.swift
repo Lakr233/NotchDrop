@@ -10,7 +10,7 @@ import SwiftUI
 struct NotchView: View {
     @StateObject var vm: NotchViewModel
 
-    var finalSize: CGSize { .init(width: 600, height: 150) }
+    @State var dropTargeting: Bool = false
 
     var notchSize: CGSize {
         switch vm.status {
@@ -23,7 +23,7 @@ struct NotchView: View {
             if ans.height < 0 { ans.height = 0 }
             return ans
         case .opened:
-            return finalSize
+            return vm.notchOpenedSize
         case .popping:
             return .init(
                 width: vm.deviceNotchRect.width,
@@ -53,27 +53,20 @@ struct NotchView: View {
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                     .padding(vm.spacing)
-                    .frame(maxWidth: finalSize.width, maxHeight: finalSize.height)
+                    .frame(maxWidth: vm.notchOpenedSize.width, maxHeight: vm.notchOpenedSize.height)
                     .zIndex(1)
-                    .onAppear {
-                        vm.notchRectIfOpen = .init(
-                            x: vm.screenRect.width / 2 - finalSize.width / 2,
-                            y: vm.screenRect.height - finalSize.height,
-                            width: finalSize.width,
-                            height: finalSize.height
-                        )
-                    }
                 }
             }
             .transition(
                 .scale.combined(
                     with: .opacity
                 ).combined(
-                    with: .offset(y: -finalSize.height / 2)
+                    with: .offset(y: -vm.notchOpenedSize.height / 2)
                 ).animation(vm.animation)
             )
 //            .blur(radius: vm.isOpened ? 0 : 32)
         }
+        .background(dragDetecter)
         .animation(vm.animation, value: vm.status)
         .preferredColorScheme(.dark)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -140,5 +133,18 @@ struct NotchView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                 .offset(x: notchCornerRadius + vm.spacing - 0.5, y: -0.5)
             }
+    }
+
+    var dragDetecter: some View {
+        Color.clear
+            .contentShape(Rectangle())
+            .frame(width: vm.deviceNotchRect.width + vm.dropDetectorRange, height: vm.deviceNotchRect.height + vm.dropDetectorRange)
+            .border(.red)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .onDrop(of: [.data], isTargeted: $dropTargeting) { _ in true }
+            .onChange(of: dropTargeting) { newValue in if newValue {
+                print("[*] open notch by drop detecter")
+                vm.status = .opened
+            } }
     }
 }

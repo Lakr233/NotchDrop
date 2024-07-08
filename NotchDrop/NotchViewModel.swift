@@ -28,6 +28,10 @@ class NotchViewModel: ObservableObject {
         blendDuration: 0.125
     )
 
+    let notchOpenedSize: CGSize = .init(width: 600, height: 150)
+
+    let dropDetectorRange: CGFloat = 24
+
     enum Status {
         case closed
         case opened
@@ -39,7 +43,15 @@ class NotchViewModel: ObservableObject {
     @Published var spacing: CGFloat = 16
     @Published var cornerRadius: CGFloat = 16
 
-    @Published var notchRectIfOpen: CGRect = .zero
+    var notchRectIfOpen: CGRect {
+        .init(
+            x: screenRect.width / 2 - notchOpenedSize.width / 2,
+            y: screenRect.height - notchOpenedSize.height,
+            width: notchOpenedSize.width,
+            height: notchOpenedSize.height
+        )
+    }
+
     @Published var deviceNotchRect: CGRect = .zero
 
     @Published var screenRect: CGRect = .zero
@@ -108,9 +120,10 @@ extension NotchViewModel {
                 let mouseLocation: NSPoint = NSEvent.mouseLocation
                 let aboutToOpen = deviceNotchRect.contains(mouseLocation)
                 if status == .closed, aboutToOpen { status = .popping }
+                if status == .popping, !aboutToOpen { status = .closed }
             }
             .store(in: &cancellables)
-
+//
         Publishers.CombineLatest(
             events.mouseLocation,
             events.mouseDraggingFile
@@ -124,19 +137,17 @@ extension NotchViewModel {
         }
         .sink { [weak self] location, draggingFile in
             guard let self else { return }
-            guard !draggingFile.isEmpty else {
-                print("[*] dragging file is empty")
-                return
-            }
             switch status {
             case .opened:
-                if !notchRectIfOpen.contains(location) {
-                    print("[*] dragging out of range \(location) notch at \(notchRectIfOpen)")
-                    if status == .opened { status = .closed }
-                }
-                return
+                break
+//                if !notchRectIfOpen.insetBy(dx: -32, dy: -32).contains(location) {
+//                    print("[*] dragging out of range \(location) notch at \(notchRectIfOpen)")
+//                    if status == .opened { status = .closed }
+//                }
+//                return
             case .closed, .popping:
-                if deviceNotchRect.contains(location) {
+                guard !draggingFile.isEmpty else { return }
+                if deviceNotchRect.insetBy(dx: -14, dy: -14).contains(location) {
                     print("[*] notch is opening, dragged at \(location), files \(draggingFile)")
                     status = .opened
                 }
