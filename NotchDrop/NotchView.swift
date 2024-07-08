@@ -136,14 +136,15 @@ struct NotchView: View {
     }
 
     var dragDetecter: some View {
-        Color.clear
+        Rectangle()
+            .foregroundStyle(Color.black.opacity(0.001)) // fuck you apple and 0.001 is the smallest we can have
             .contentShape(Rectangle())
             .frame(width: vm.deviceNotchRect.width + vm.dropDetectorRange, height: vm.deviceNotchRect.height + vm.dropDetectorRange)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .onDrop(of: [.data], isTargeted: $dropTargeting) { _ in true }
             .onChange(of: dropTargeting) { newValue in if newValue {
                 print("[*] open notch by drop detecter")
-                vm.status = .opened
+                vm.notchOpen(.drag)
             } }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
