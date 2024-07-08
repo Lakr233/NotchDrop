@@ -12,11 +12,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var isFirstOpen = true
     var mainWindowController: NotchWindowController?
 
-    override init() {
-        super.init()
-        print("[+] AppDelegate init")
-    }
-
     func applicationDidFinishLaunching(_: Notification) {
         NotificationCenter.default.addObserver(
             self,
@@ -48,7 +43,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             return
         }
-        print("[i] screen \(mainScreen) has notch with size \(mainScreen.notchSize)")
         mainWindowController = .init(screen: mainScreen)
     }
 }

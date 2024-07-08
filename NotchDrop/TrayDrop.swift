@@ -43,7 +43,7 @@ class TrayDrop: ObservableObject {
             DispatchQueue.main.async {
                 self.isLoading -= 1
                 let alert = NSAlert()
-                alert.messageText = "Error"
+                alert.messageText = NSLocalizedString("Error", comment: "")
                 alert.alertStyle = .critical
                 alert.informativeText = error.localizedDescription
                 alert.addButton(withTitle: "OK")
@@ -56,7 +56,6 @@ class TrayDrop: ObservableObject {
         var inEdit = items
         let shouldCleanItems = items.filter(\.shouldClean)
         for item in shouldCleanItems {
-            print("[*] clean \(item.originalURL)")
             inEdit.remove(item)
         }
         items = inEdit
@@ -82,9 +81,7 @@ class TrayDrop: ObservableObject {
                 try FileManager.default.removeItem(at: url)
                 url = url.deletingLastPathComponent()
             }
-        } catch {
-            print("[*] failed to clean up \(url)")
-        }
+        } catch {}
 
         inEdit.remove(item)
         items = inEdit

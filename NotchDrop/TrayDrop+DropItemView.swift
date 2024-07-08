@@ -34,7 +34,6 @@ struct DropItemView: View {
         .onDrag { NSItemProvider(object: item.decisionURL as NSURL) }
         .onTapGesture {
             vm.notchClose()
-            print("[*] will open \(item.duplicatedURL)")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 NSWorkspace.shared.open(item.duplicatedURL)
             }

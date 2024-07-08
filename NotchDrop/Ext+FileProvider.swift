@@ -42,7 +42,7 @@ extension NSItemProvider {
     }
 }
 
-extension Array where Element == NSItemProvider {
+extension [NSItemProvider] {
     func interfaceConvert() -> [URL]? {
         let urls = compactMap { provider -> URL? in
             provider.convertToFilePathThatIsWhatWeThinkItWillWorkWithNotchDrop()

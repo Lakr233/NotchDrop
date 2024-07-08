@@ -143,7 +143,6 @@ struct NotchView: View {
             .frame(width: vm.deviceNotchRect.width + vm.dropDetectorRange, height: vm.deviceNotchRect.height + vm.dropDetectorRange)
             .onDrop(of: [.data], isTargeted: $dropTargeting) { _ in true }
             .onChange(of: dropTargeting) { newValue in if newValue {
-                print("[*] open notch by drop detecter")
                 vm.notchOpen(.drag)
             } }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

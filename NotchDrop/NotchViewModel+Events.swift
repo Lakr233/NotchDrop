@@ -32,14 +32,12 @@ extension NotchViewModel {
                         checkRect.size.width = screenRect.width
                         if checkRect.contains(mouseLocation) {
                             notchClose()
-                            print("[*] open the project url")
                             NSWorkspace.shared.open(productPage)
                         }
                     }
                 case .closed, .popping:
                     // touch inside, open
                     if deviceNotchRect.contains(mouseLocation) {
-                        print("[*] notch is opening, clicked at \(mouseLocation)")
                         notchOpen(.click)
                     }
                 }
@@ -94,13 +92,11 @@ extension NotchViewModel {
                     break
                 }
                 if !notchOpenedRect.insetBy(dx: -32, dy: -32).contains(location) {
-                    print("[*] dragging out of range \(location) notch at \(notchOpenedRect)")
                     if status == .opened { notchClose() }
                 }
             case .closed, .popping:
                 guard !draggingFile.isEmpty else { return }
                 if deviceNotchRect.insetBy(dx: -14, dy: -14).contains(location) {
-                    print("[*] notch is opening, dragged at \(location), files \(draggingFile)")
                     notchOpen(.drag)
                 }
             }
@@ -111,6 +107,15 @@ extension NotchViewModel {
             .filter { $0 != .closed }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in self?.notchVisible = true }
+            .store(in: &cancellables)
+
+        $status
+            .sink { _ in
+                NSHapticFeedbackManager.defaultPerformer.perform(
+                    .alignment,
+                    performanceTime: .now
+                )
+            }
             .store(in: &cancellables)
 
         $status

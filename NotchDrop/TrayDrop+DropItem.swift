@@ -35,8 +35,6 @@ extension TrayDrop {
                 withIntermediateDirectories: true
             )
             try FileManager.default.copyItem(at: url, to: duplicatedURL)
-
-            print("[*] copied \(url) to \(duplicatedURL)")
         }
     }
 }

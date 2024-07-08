@@ -20,7 +20,6 @@ class NotchViewModel: NSObject, ObservableObject {
     }
 
     deinit {
-        print("[*] NotchViewModel deinit")
         destroy()
     }
 

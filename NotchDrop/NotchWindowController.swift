@@ -29,8 +29,6 @@ class NotchWindowController: NSWindowController {
             width: notchSize.width,
             height: notchSize.height
         )
-        print("[i] notch rect in screen \(vm.deviceNotchRect)")
-
         window.makeKeyAndOrderFront(nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak vm] in
@@ -52,20 +50,17 @@ class NotchWindowController: NSWindowController {
         )
         self.init(window: window, screen: screen)
 
-        print("[i] this screen is having frame \(screen.frame)")
         let topRect = CGRect(
             x: screen.frame.origin.x,
             y: screen.frame.origin.y + screen.frame.height - notchHeight,
             width: screen.frame.width,
             height: notchHeight
         )
-        print("[i] using this frame \(topRect)")
         window.setFrameOrigin(topRect.origin)
         window.setContentSize(topRect.size)
     }
 
     deinit {
-        print("[*] NotchWindowController deinit")
         destroy()
     }
 
