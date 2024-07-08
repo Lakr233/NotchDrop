@@ -139,7 +139,6 @@ struct NotchView: View {
         Color.clear
             .contentShape(Rectangle())
             .frame(width: vm.deviceNotchRect.width + vm.dropDetectorRange, height: vm.deviceNotchRect.height + vm.dropDetectorRange)
-            .border(.red)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .onDrop(of: [.data], isTargeted: $dropTargeting) { _ in true }
             .onChange(of: dropTargeting) { newValue in if newValue {

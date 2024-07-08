@@ -43,7 +43,7 @@ class NotchViewModel: ObservableObject {
     @Published var spacing: CGFloat = 16
     @Published var cornerRadius: CGFloat = 16
 
-    var notchRectIfOpen: CGRect {
+    var notchOpenedRect: CGRect {
         .init(
             x: screenRect.width / 2 - notchOpenedSize.width / 2,
             y: screenRect.height - notchOpenedSize.height,
@@ -70,7 +70,7 @@ extension NotchViewModel {
                 switch status {
                 case .opened:
                     // touch outside, close
-                    if !notchRectIfOpen.contains(mouseLocation) {
+                    if !notchOpenedRect.contains(mouseLocation) {
                         status = .closed
                         // click where user open the panel
                     } else if deviceNotchRect.contains(mouseLocation) {
@@ -139,12 +139,13 @@ extension NotchViewModel {
             guard let self else { return }
             switch status {
             case .opened:
-                break
-//                if !notchRectIfOpen.insetBy(dx: -32, dy: -32).contains(location) {
-//                    print("[*] dragging out of range \(location) notch at \(notchRectIfOpen)")
-//                    if status == .opened { status = .closed }
-//                }
-//                return
+                if deviceNotchRect.insetBy(dx: -14, dy: -14).contains(location) {
+                    break
+                }
+                if !notchOpenedRect.insetBy(dx: -32, dy: -32).contains(location) {
+                    print("[*] dragging out of range \(location) notch at \(notchOpenedRect)")
+                    if status == .opened { status = .closed }
+                }
             case .closed, .popping:
                 guard !draggingFile.isEmpty else { return }
                 if deviceNotchRect.insetBy(dx: -14, dy: -14).contains(location) {

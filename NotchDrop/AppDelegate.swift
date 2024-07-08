@@ -9,6 +9,7 @@ import AppKit
 import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    var isFirstOpen = true
     var mainWindowController: NotchWindowController?
 
     override init() {
@@ -31,11 +32,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func rebuildApplicationWindows() {
+        defer { isFirstOpen = false }
         if let mainWindowController {
             mainWindowController.destroy()
         }
         mainWindowController = nil
         guard let mainScreen = NSScreen.buildin, mainScreen.notchSize != .zero else {
+            if isFirstOpen {
+                let alert = NSAlert()
+                alert.messageText = "Error"
+                alert.alertStyle = .critical
+                alert.informativeText = "You dont have a notch screen"
+                alert.addButton(withTitle: "OK")
+                alert.runModal()
+            }
             return
         }
         print("[i] screen \(mainScreen) has notch with size \(mainScreen.notchSize)")
