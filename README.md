@@ -2,6 +2,8 @@
 
 Transform your MacBook's notch into a convenient file drop zone.
 
+[简体中文 🇨🇳](./Resources/i18n/zh-Hans/README.md)
+
 ## 👀 Preview
 
 ![Screenshot](./Resources/截屏2024-07-08%2003.14.34.png)
@@ -38,7 +40,7 @@ Alternatively, you can use the [Command File](./Resources/KillNotchDrop.command)
 
 ## 🥰 Acknowledgements
 
-Special thanks to [NotchNook](https://lo.cafe/notchnook) for the original idea. I created this project as a free and open-source alternative, focusing on the features I personally need and improving some issues. Since NotchNook wasn't compatible with my essential iBar app, I developed my own version to ensure better compatibility, while simplifying the functionality to suit my needs.
+Special thanks to [NotchNook](https://lo.cafe/notchnook) for providing the initial inspiration. This open-source project focuses more on my own needs, simplifies various configurations, and improves compatibility with the software I prefer.
 
 ---
 
