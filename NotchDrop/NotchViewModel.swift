@@ -17,14 +17,24 @@ class NotchViewModel: ObservableObject {
         setupCancellables()
     }
 
+    deinit {
+        print("[*] NotchViewModel deinit")
+        destroy()
+    }
+
     let animation: Animation = .interactiveSpring(
         duration: 0.5,
         extraBounce: 0.25,
         blendDuration: 0.125
     )
 
-    @Published var isOpened: Bool = false
-    @Published var isAboutOpen: Bool = false
+    enum Status {
+        case closed
+        case opened
+        case popping
+    }
+
+    @Published var status: Status = .closed
 
     @Published var spacing: CGFloat = 16
     @Published var cornerRadius: CGFloat = 16
@@ -44,43 +54,33 @@ extension NotchViewModel {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self else { return }
-
                 let mouseLocation: NSPoint = NSEvent.mouseLocation
-                if isOpened {
+                switch status {
+                case .opened:
                     // touch outside, close
                     if !notchRectIfOpen.contains(mouseLocation) {
-                        isOpened = false
+                        status = .closed
                         // click where user open the panel
                     } else if deviceNotchRect.contains(mouseLocation) {
-                        isOpened = false
+                        status = .closed
                         // for the same height as device notch, open the url of project
                     } else {
                         var checkRect = deviceNotchRect
                         checkRect.origin.x = 0
                         checkRect.size.width = screenRect.width
                         if checkRect.contains(mouseLocation) {
-                            if isOpened { isOpened = false }
+                            status = .closed
                             print("[*] open the project url")
                             NSWorkspace.shared.open(productPage)
                         }
                     }
-                } else {
+                case .closed, .popping:
                     // touch inside, open
                     if deviceNotchRect.contains(mouseLocation) {
                         print("[*] notch is opening, clicked at \(mouseLocation)")
-                        isOpened = true
+                        status = .opened
                     }
                 }
-            }
-            .store(in: &cancellables)
-
-        events.mouseLocation
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] mouseLocation in
-                guard let self else { return }
-                let mouseLocation: NSPoint = NSEvent.mouseLocation
-                let aboutToOpen = deviceNotchRect.contains(mouseLocation)
-                if isAboutOpen != aboutToOpen { isAboutOpen = aboutToOpen }
             }
             .store(in: &cancellables)
 
@@ -101,6 +101,16 @@ extension NotchViewModel {
             }
             .store(in: &cancellables)
 
+        events.mouseLocation
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] mouseLocation in
+                guard let self else { return }
+                let mouseLocation: NSPoint = NSEvent.mouseLocation
+                let aboutToOpen = deviceNotchRect.contains(mouseLocation)
+                if status == .closed, aboutToOpen { status = .popping }
+            }
+            .store(in: &cancellables)
+
         Publishers.CombineLatest(
             events.mouseLocation,
             events.mouseDraggingFile
@@ -109,31 +119,31 @@ extension NotchViewModel {
         .map { _, _ in
             let location: NSPoint = NSEvent.mouseLocation
             let draggingFile = NSPasteboard(name: .drag)
-                .pasteboardItems?
-                .compactMap { $0.string(forType: .fileURL) }
-                .compactMap { URL(string: $0) } ?? []
+                .pasteboardItems ?? []
             return (location, draggingFile)
         }
         .sink { [weak self] location, draggingFile in
             guard let self else { return }
-            if isOpened, !notchRectIfOpen.contains(location) {
-                isOpened = false
-                return
-            }
-            guard deviceNotchRect.contains(location) else { return }
             guard !draggingFile.isEmpty else { return }
-            print("[*] notch is opening, dragged at \(location), files \(draggingFile)")
-            isOpened = true
+            switch status {
+            case .opened:
+                if !notchRectIfOpen.contains(location) {
+                    print("[*] dragging out of range \(location) notch at \(notchRectIfOpen)")
+                    if status == .opened { status = .closed }
+                }
+                return
+            case .closed, .popping:
+                if deviceNotchRect.contains(location) {
+                    print("[*] notch is opening, dragged at \(location), files \(draggingFile)")
+                    status = .opened
+                }
+            }
         }
         .store(in: &cancellables)
+    }
 
-        $isOpened
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] isOpened in
-                guard let self else { return }
-                print("[*] notch is switching status \(isOpened)")
-                if isOpened, isAboutOpen { isAboutOpen = false }
-            }
-            .store(in: &cancellables)
+    func destroy() {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
     }
 }

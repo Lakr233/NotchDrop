@@ -10,10 +10,16 @@ import Cocoa
 private let notchHeight: CGFloat = 200
 
 class NotchWindowController: NSWindowController {
-    let vm = NotchViewModel()
+    var vm: NotchViewModel?
+    weak var screen: NSScreen?
 
     init(window: NSWindow, screen: NSScreen) {
+        self.screen = screen
+
         super.init(window: window)
+
+        let vm = NotchViewModel()
+        self.vm = vm
         contentViewController = NotchViewController(vm)
 
         let notchSize = screen.notchSize
@@ -26,10 +32,10 @@ class NotchWindowController: NSWindowController {
         print("[i] notch rect in screen \(vm.deviceNotchRect)")
 
         window.makeKeyAndOrderFront(nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            guard let self else { return }
-            vm.screenRect = screen.frame
-            if !vm.isOpened { vm.isOpened = true }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak vm] in
+            vm?.screenRect = screen.frame
+            vm?.status = .opened
         }
     }
 
@@ -56,5 +62,18 @@ class NotchWindowController: NSWindowController {
         print("[i] using this frame \(topRect)")
         window.setFrameOrigin(topRect.origin)
         window.setContentSize(topRect.size)
+    }
+
+    deinit {
+        print("[*] NotchWindowController deinit")
+        destroy()
+    }
+
+    func destroy() {
+        vm?.destroy()
+        vm = nil
+        window?.close()
+        contentViewController = nil
+        window = nil
     }
 }

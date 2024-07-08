@@ -13,24 +13,31 @@ struct NotchView: View {
     var finalSize: CGSize { .init(width: 600, height: 150) }
 
     var notchSize: CGSize {
-        if vm.isOpened { return finalSize }
-        if vm.isAboutOpen { return .init(
-            width: vm.deviceNotchRect.width,
-            height: vm.deviceNotchRect.height + 4
-        ) }
-        var ans = CGSize(
-            width: vm.deviceNotchRect.width - 4,
-            height: vm.deviceNotchRect.height - 4
-        )
-        if ans.width < 0 { ans.width = 0 }
-        if ans.height < 0 { ans.height = 0 }
-        return ans
+        switch vm.status {
+        case .closed:
+            var ans = CGSize(
+                width: vm.deviceNotchRect.width - 4,
+                height: vm.deviceNotchRect.height - 4
+            )
+            if ans.width < 0 { ans.width = 0 }
+            if ans.height < 0 { ans.height = 0 }
+            return ans
+        case .opened:
+            return finalSize
+        case .popping:
+            return .init(
+                width: vm.deviceNotchRect.width,
+                height: vm.deviceNotchRect.height + 4
+            )
+        }
     }
 
     var notchCornerRadius: CGFloat {
-        if vm.isOpened { return 32 }
-        if vm.isAboutOpen { return 10 }
-        return 8
+        switch vm.status {
+        case .closed: 8
+        case .opened: 32
+        case .popping: 10
+        }
     }
 
     var body: some View {
@@ -39,7 +46,7 @@ struct NotchView: View {
                 .zIndex(0)
                 .disabled(true)
             Group {
-                if vm.isOpened {
+                if vm.status == .opened {
                     VStack(spacing: vm.spacing) {
                         NotchHeaderView(vm: vm)
                         NotchContentView(vm: vm)
@@ -67,8 +74,7 @@ struct NotchView: View {
             )
 //            .blur(radius: vm.isOpened ? 0 : 32)
         }
-        .animation(vm.animation, value: vm.isOpened)
-        .animation(vm.animation, value: vm.isAboutOpen)
+        .animation(vm.animation, value: vm.status)
         .preferredColorScheme(.dark)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
@@ -82,7 +88,7 @@ struct NotchView: View {
                 height: notchSize.height
             )
             .shadow(
-                color: .black.opacity((vm.isOpened || vm.isAboutOpen) ? 1 : 0),
+                color: .black.opacity(([.opened, .popping].contains(vm.status)) ? 1 : 0),
                 radius: 16
             )
     }

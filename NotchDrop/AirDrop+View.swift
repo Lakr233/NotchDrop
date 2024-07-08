@@ -21,7 +21,7 @@ struct AirDropView: View {
             .onDrop(of: [.data], isTargeted: $targeting) { providers in
                 trigger = .init()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                    vm.isOpened = false
+                    vm.status = .closed
                 }
                 DispatchQueue.global().async { beginDrop(providers) }
                 return true
@@ -66,7 +66,7 @@ struct AirDropView: View {
         .onTapGesture {
             trigger = .init()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                vm.isOpened = false
+                vm.status = .closed
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 let picker = NSOpenPanel()

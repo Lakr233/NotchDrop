@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func rebuildApplicationWindows() {
         if let mainWindowController {
-            mainWindowController.close()
+            mainWindowController.destroy()
         }
         mainWindowController = nil
         guard let mainScreen = NSScreen.buildin, mainScreen.notchSize != .zero else {
