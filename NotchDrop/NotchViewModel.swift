@@ -124,7 +124,10 @@ extension NotchViewModel {
         }
         .sink { [weak self] location, draggingFile in
             guard let self else { return }
-            guard !draggingFile.isEmpty else { return }
+            guard !draggingFile.isEmpty else {
+                print("[*] dragging file is empty")
+                return
+            }
             switch status {
             case .opened:
                 if !notchRectIfOpen.contains(location) {

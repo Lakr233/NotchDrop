@@ -22,22 +22,21 @@ extension NSItemProvider {
             loadInPlaceFileRepresentation(
                 forTypeIdentifier: UTType.data.identifier
             ) { input, _, _ in
-                url = input
-                sem.signal()
-            }
-            sem.wait()
-        }
-        if url == nil {
-            _ = loadObject(ofClass: String.self) { item, _ in
+                defer { sem.signal() }
+                guard let input else { return }
                 let file = temporaryDirectory
                     .appendingPathComponent(UUID().uuidString)
-                    .appendingPathExtension("txt")
-                try? item?.write(to: file, atomically: true, encoding: .utf8)
+                    .appendingPathComponent(input.lastPathComponent)
+                try? FileManager.default.createDirectory(
+                    at: file.deletingLastPathComponent(),
+                    withIntermediateDirectories: true
+                )
+                try? FileManager.default.copyItem(at: input, to: file)
                 if FileManager.default.fileExists(atPath: file.path) {
                     url = file
                 }
-                sem.signal()
             }
+            sem.wait()
         }
         return url
     }
