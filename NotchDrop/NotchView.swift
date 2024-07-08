@@ -65,9 +65,8 @@ struct NotchView: View {
                     with: .offset(y: -vm.notchOpenedSize.height / 2)
                 ).animation(vm.animation)
             )
-//            .blur(radius: vm.isOpened ? 0 : 32)
         }
-        .background(dragDetecter)
+        .background(dragDetecter.opacity(vm.status == .closed ? 1 : 0))
         .animation(vm.animation, value: vm.status)
         .preferredColorScheme(.dark)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -137,7 +136,7 @@ struct NotchView: View {
     }
 
     var dragDetecter: some View {
-        Rectangle()
+        RoundedRectangle(cornerRadius: notchCornerRadius)
             .foregroundStyle(Color.black.opacity(0.001)) // fuck you apple and 0.001 is the smallest we can have
             .contentShape(Rectangle())
             .frame(width: vm.deviceNotchRect.width + vm.dropDetectorRange, height: vm.deviceNotchRect.height + vm.dropDetectorRange)
