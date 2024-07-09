@@ -50,6 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         mainWindowController = .init(screen: mainScreen)
+        if isFirstOpen { mainWindowController?.openAfterCreate = true }
     }
 
     func determineIfProcessIdentifierMatches() {

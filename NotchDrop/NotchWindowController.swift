@@ -13,6 +13,8 @@ class NotchWindowController: NSWindowController {
     var vm: NotchViewModel?
     weak var screen: NSScreen?
 
+    var openAfterCreate: Bool = false
+
     init(window: NSWindow, screen: NSScreen) {
         self.screen = screen
 
@@ -33,7 +35,7 @@ class NotchWindowController: NSWindowController {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak vm] in
             vm?.screenRect = screen.frame
-            vm?.notchOpen(.boot)
+            if self.openAfterCreate { vm?.notchOpen(.boot) }
         }
     }
 
