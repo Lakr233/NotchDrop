@@ -6,7 +6,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AirDrop"
+            "value" : "隔空投送"
           }
         },
         "zh-Hant" : {
@@ -22,7 +22,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AirDrop 服务不可用，请稍后重试"
+            "value" : "隔空投送服务不可用，请稍后重试"
           }
         },
         "zh-Hant" : {
