@@ -50,7 +50,7 @@ struct TrayView: View {
         if tvm.isEmpty {
             VStack(spacing: 8) {
                 Image(systemName: "tray.and.arrow.down.fill")
-                Text(NSLocalizedString("Drag files here to keep them for a day & Press Option to delete", comment: ""))
+                Text("Drag files here to keep them for a day & Press Option to delete")
             }
             .font(.system(.headline, design: .rounded))
         } else {

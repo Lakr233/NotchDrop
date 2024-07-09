@@ -13,9 +13,9 @@ struct NotchHeaderView: View {
 
     var body: some View {
         HStack {
-            Text(NSLocalizedString("Notch Drop", comment: ""))
+            Text("Notch Drop")
             Spacer()
-            Text("888888888888888")
+            Text(verbatim: "888888888888888")
                 .hidden()
                 .overlay { github }
         }
