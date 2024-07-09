@@ -48,8 +48,8 @@ class NotchViewModel: NSObject, ObservableObject {
 
     var notchOpenedRect: CGRect {
         .init(
-            x: screenRect.width / 2 - notchOpenedSize.width / 2,
-            y: screenRect.height - notchOpenedSize.height,
+            x: screenRect.width / 2 - notchOpenedSize.width / 2 + screenRect.minX,
+            y: screenRect.height - notchOpenedSize.height + screenRect.minY,
             width: notchOpenedSize.width,
             height: notchOpenedSize.height
         )
