@@ -32,7 +32,12 @@ extension NotchViewModel {
                         checkRect.size.width = screenRect.width
                         if checkRect.contains(mouseLocation) {
                             notchClose()
-                            NSWorkspace.shared.open(productPage)
+                            if openedSponsorPage {
+                                NSWorkspace.shared.open(productPage)
+                            } else {
+                                NSWorkspace.shared.open(sponsorPage)
+                                openedSponsorPage = true
+                            }
                         }
                     }
                 case .closed, .popping:

@@ -19,12 +19,7 @@ class AirDrop: NSObject, NSSharingServiceDelegate {
         do {
             try sendEx(files)
         } catch {
-            let alert = NSAlert()
-            alert.messageText = NSLocalizedString("Error", comment: "")
-            alert.alertStyle = .critical
-            alert.informativeText = error.localizedDescription
-            alert.addButton(withTitle: "OK")
-            alert.runModal()
+            NSAlert.popError(error)
         }
     }
 

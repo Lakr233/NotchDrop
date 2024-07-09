@@ -12,6 +12,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var isFirstOpen = true
     var mainWindowController: NotchWindowController?
 
+    var timer: Timer?
+
     func applicationDidFinishLaunching(_: Notification) {
         NotificationCenter.default.addObserver(
             self,
@@ -22,8 +24,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.setActivationPolicy(.accessory)
 
         _ = EventMonitors.shared
+        let timer = Timer.scheduledTimer(
+            withTimeInterval: 1,
+            repeats: true
+        ) { [weak self] _ in self?.determineIfProcessIdentifierMatches() }
+        self.timer = timer
 
         rebuildApplicationWindows()
+    }
+
+    func applicationWillTerminate(_: Notification) {
+        try? FileManager.default.removeItem(at: temporaryDirectory)
     }
 
     @objc func rebuildApplicationWindows() {
@@ -34,15 +45,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController = nil
         guard let mainScreen = NSScreen.buildin, mainScreen.notchSize != .zero else {
             if isFirstOpen {
-                let alert = NSAlert()
-                alert.messageText = NSLocalizedString("Error", comment: "")
-                alert.alertStyle = .critical
-                alert.informativeText = NSLocalizedString("Your current screen does not have a notch", comment: "")
-                alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
-                alert.runModal()
+                NSAlert.popError(NSLocalizedString("Your current screen does not have a notch", comment: ""))
             }
             return
         }
         mainWindowController = .init(screen: mainScreen)
+    }
+
+    func determineIfProcessIdentifierMatches() {
+        let pid = String(NSRunningApplication.current.processIdentifier)
+        let content = (try? String(contentsOf: pidFile)) ?? ""
+        guard pid.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            == content.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        else {
+            NSApp.terminate(nil)
+            return
+        }
     }
 }

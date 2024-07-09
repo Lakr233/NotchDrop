@@ -42,12 +42,7 @@ class TrayDrop: ObservableObject {
         } catch {
             DispatchQueue.main.async {
                 self.isLoading -= 1
-                let alert = NSAlert()
-                alert.messageText = NSLocalizedString("Error", comment: "")
-                alert.alertStyle = .critical
-                alert.informativeText = error.localizedDescription
-                alert.addButton(withTitle: "OK")
-                alert.runModal()
+                NSAlert.popError(error)
             }
         }
     }

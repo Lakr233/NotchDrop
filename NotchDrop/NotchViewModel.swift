@@ -63,6 +63,9 @@ class NotchViewModel: NSObject, ObservableObject {
     @Published var optionKeyPressed: Bool = false
     @Published var notchVisible: Bool = true
 
+    @PublishedPersist(key: "OpenedSponsorPage", defaultValue: false)
+    var openedSponsorPage: Bool
+
     func notchOpen(_ by: OpenedBy) {
         openedBy = by
         status = .opened
