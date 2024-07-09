@@ -2,14 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "AirDrop" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AirDrop"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25,14 +18,7 @@
       }
     },
     "AirDrop service not available" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AirDrop service not available"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -47,15 +33,24 @@
         }
       }
     },
-    "Drag files here to keep them for a day & Press Option to delete" : {
-      "extractionState" : "migrated",
+    "Donate" : {
       "localizations" : {
-        "en" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drag files here to keep them for a day & Press Option to delete"
+            "value" : "Donate"
           }
         },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donate"
+          }
+        }
+      }
+    },
+    "Drag files here to keep them for a day & Press Option to delete" : {
+      "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -71,14 +66,7 @@
       }
     },
     "Error" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -94,14 +82,7 @@
       }
     },
     "Notch Drop" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notch Drop"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -117,14 +98,7 @@
       }
     },
     "OK" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OK"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -140,14 +114,7 @@
       }
     },
     "One or more files failed to load" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "One or more files failed to load"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -163,14 +130,7 @@
       }
     },
     "Your current screen does not have a notch" : {
-      "extractionState" : "migrated",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your current screen does not have a notch"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
