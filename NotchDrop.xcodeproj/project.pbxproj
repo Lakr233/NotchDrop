@@ -43,7 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */ = {isa = PBXFileReference; explicitFileType = text.json; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		502E41D52C3CEC990060660E /* Ext+NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSAlert.swift"; sourceTree = "<group>"; };
 		504381802C3A86EA000ED325 /* NotchDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504381872C3A86EC000ED325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -395,7 +395,7 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -424,7 +424,7 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
