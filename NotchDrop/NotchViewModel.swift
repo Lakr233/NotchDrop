@@ -12,8 +12,9 @@ import SwiftUI
 
 class NotchViewModel: NSObject, ObservableObject {
     var cancellables: Set<AnyCancellable> = []
-
-    override init() {
+    let inset: CGFloat
+    init(inset: CGFloat = -4) {
+        self.inset = inset
         super.init()
 
         setupCancellables()

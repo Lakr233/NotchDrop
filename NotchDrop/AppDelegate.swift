@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             mainWindowController.destroy()
         }
         mainWindowController = nil
-        guard let mainScreen = NSScreen.buildin, mainScreen.notchSize != .zero else {
+        guard let mainScreen = NSScreen.main else {
             if isFirstOpen {
                 NSAlert.popError(NSLocalizedString("Your current screen does not have a notch", comment: ""))
             }

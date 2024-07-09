@@ -20,11 +20,15 @@ class NotchWindowController: NSWindowController {
 
         super.init(window: window)
 
-        let vm = NotchViewModel()
+        var notchSize = screen.notchSize
+        
+        let vm = NotchViewModel(inset: notchSize == .zero ? 0 : -4)
         self.vm = vm
         contentViewController = NotchViewController(vm)
 
-        let notchSize = screen.notchSize
+        if notchSize == .zero {
+            notchSize = .init(width: 150, height: 28)
+        }
         vm.deviceNotchRect = CGRect(
             x: screen.frame.origin.x + (screen.frame.width - notchSize.width) / 2,
             y: screen.frame.origin.y + screen.frame.height - notchSize.height,
