@@ -29,7 +29,7 @@
 pkill NotchDrop
 ```
 
-或者，你也可以运行资源文件夹中的 [KillNotchDrop.command](./Resources/KillNotchDrop.command) 文件。
+或者，你也可以运行资源文件夹中的 [KillNotchDrop.command](../../KillNotchDrop.command) 文件。
 
 ## 🧑‍⚖️ 许可证
 
