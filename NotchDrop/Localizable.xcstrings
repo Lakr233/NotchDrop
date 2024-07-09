@@ -38,13 +38,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Donate"
+            "value" : "打赏"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Donate"
+            "value" : "捐贈"
           }
         }
       }
