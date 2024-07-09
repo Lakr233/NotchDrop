@@ -8,6 +8,7 @@
 import Cocoa
 import Combine
 import Foundation
+import SwiftUI
 
 extension NotchViewModel {
     func setupCancellables() {
@@ -23,7 +24,7 @@ extension NotchViewModel {
                     if !notchOpenedRect.contains(mouseLocation) {
                         notchClose()
                         // click where user open the panel
-                    } else if deviceNotchRect.insetBy(dx: -4, dy: -4).contains(mouseLocation) {
+                    } else if deviceNotchRect.insetBy(dx: inset, dy: inset).contains(mouseLocation) {
                         notchClose()
                         // for the same height as device notch, open the url of project
                     } else {
@@ -42,7 +43,7 @@ extension NotchViewModel {
                     }
                 case .closed, .popping:
                     // touch inside, open
-                    if deviceNotchRect.insetBy(dx: -4, dy: -4).contains(mouseLocation) {
+                    if deviceNotchRect.insetBy(dx: inset, dy: inset).contains(mouseLocation) {
                         notchOpen(.click)
                     }
                 }
@@ -71,12 +72,12 @@ extension NotchViewModel {
             .sink { [weak self] mouseLocation in
                 guard let self else { return }
                 let mouseLocation: NSPoint = NSEvent.mouseLocation
-                let aboutToOpen = deviceNotchRect.insetBy(dx: -4, dy: -4).contains(mouseLocation)
+                let aboutToOpen = deviceNotchRect.insetBy(dx: inset, dy: inset).contains(mouseLocation)
                 if status == .closed, aboutToOpen { notchPop() }
                 if status == .popping, !aboutToOpen { notchClose() }
             }
             .store(in: &cancellables)
-//
+        
         Publishers.CombineLatest(
             events.mouseLocation,
             events.mouseDraggingFile
@@ -111,7 +112,11 @@ extension NotchViewModel {
         $status
             .filter { $0 != .closed }
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in self?.notchVisible = true }
+            .sink { [weak self] _ in
+                withAnimation {
+                    self?.notchVisible = true
+                }
+            }
             .store(in: &cancellables)
 
         $status
@@ -127,7 +132,11 @@ extension NotchViewModel {
             .debounce(for: 0.5, scheduler: DispatchQueue.global())
             .filter { $0 == .closed }
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in self?.notchVisible = false }
+            .sink { [weak self] _ in
+                withAnimation {
+                    self?.notchVisible = false
+                }
+            }
             .store(in: &cancellables)
     }
 
