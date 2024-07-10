@@ -27,19 +27,6 @@ extension NotchViewModel {
                     } else if deviceNotchRect.insetBy(dx: inset, dy: inset).contains(mouseLocation) {
                         notchClose()
                         // for the same height as device notch, open the url of project
-                    } else {
-                        var checkRect = deviceNotchRect
-                        checkRect.origin.x = 0
-                        checkRect.size.width = screenRect.width
-                        if checkRect.contains(mouseLocation) {
-                            notchClose()
-                            if openedSponsorPage {
-                                NSWorkspace.shared.open(productPage)
-                            } else {
-                                NSWorkspace.shared.open(sponsorPage)
-                                openedSponsorPage = true
-                            }
-                        }
                     }
                 case .closed, .popping:
                     // touch inside, open

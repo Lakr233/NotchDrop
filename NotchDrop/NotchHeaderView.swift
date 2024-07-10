@@ -17,7 +17,7 @@ struct NotchHeaderView: View {
             Spacer()
             Text(verbatim: "888888888888888")
                 .hidden()
-                .overlay { github }
+                .overlay { github.buttonStyle(PlainButtonStyle()) }
         }
         .font(.system(.headline, design: .rounded))
     }
@@ -25,21 +25,31 @@ struct NotchHeaderView: View {
     @ViewBuilder
     var github: some View {
         if vm.openedSponsorPage {
-            Image(.gitHub)
-                .antialiased(true)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-        } else {
-            ColorfulView(color: .constant(ColorfulPreset.appleIntelligence.colors))
-                .contrast(2)
-                .mask(
-                    HStack {
-                        Text("Donate")
-                        Image(systemName: "arrow.up.right.circle.fill")
-                    }
+            Button {
+                NSWorkspace.shared.open(productPage)
+            } label: {
+                Image(.gitHub)
+                    .antialiased(true)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                )
+            }
+        } else {
+            Button {
+                NSWorkspace.shared.open(sponsorPage)
+                vm.openedSponsorPage = true
+            } label: {
+                ColorfulView(color: .constant(ColorfulPreset.appleIntelligence.colors))
+                    .contrast(2)
+                    .mask(
+                        HStack {
+                            Text("Donate")
+                            Image(systemName: "arrow.up.right.circle.fill")
+                        }
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    )
+            }
+
         }
     }
 }
