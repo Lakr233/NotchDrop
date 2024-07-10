@@ -8,11 +8,14 @@
 import Foundation
 import Pow
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct DropItemView: View {
     let item: TrayDrop.DropItem
     @StateObject var vm: NotchViewModel
     @StateObject var tvm = TrayDrop.shared
+
+    @State var hover = false
 
     var body: some View {
         VStack {
@@ -31,7 +34,10 @@ struct DropItemView: View {
             removal: .movingParts.poof
         ))
         .contentShape(Rectangle())
-        .onDrag { NSItemProvider(object: item.storageURL as NSURL) }
+        .onHover { hover = $0 }
+        .scaleEffect(hover ? 1.05 : 1.0)
+        .animation(vm.animation, value: hover)
+        .onDrag { NSItemProvider(contentsOf: item.storageURL) ?? .init() }
         .onTapGesture {
             vm.notchClose()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
