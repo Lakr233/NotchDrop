@@ -21,7 +21,7 @@ class NotchWindowController: NSWindowController {
         super.init(window: window)
 
         var notchSize = screen.notchSize
-        
+
         let vm = NotchViewModel(inset: notchSize == .zero ? 0 : -4)
         self.vm = vm
         contentViewController = NotchViewController(vm)

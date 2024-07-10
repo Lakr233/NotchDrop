@@ -130,6 +130,7 @@
       }
     },
     "Your current screen does not have a notch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {

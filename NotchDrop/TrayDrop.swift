@@ -64,7 +64,7 @@ class TrayDrop: ObservableObject {
     private func delete(item: DropItem) {
         var inEdit = items
 
-        var url = item.duplicatedURL
+        var url = item.storageURL
         try? FileManager.default.removeItem(at: url)
 
         do {

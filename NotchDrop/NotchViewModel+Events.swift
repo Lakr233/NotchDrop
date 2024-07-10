@@ -64,7 +64,7 @@ extension NotchViewModel {
                 if status == .popping, !aboutToOpen { notchClose() }
             }
             .store(in: &cancellables)
-        
+
         Publishers.CombineLatest(
             events.mouseLocation,
             events.mouseDraggingFile

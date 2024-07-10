@@ -46,10 +46,9 @@ struct NotchHeaderView: View {
                             Text("Donate")
                             Image(systemName: "arrow.up.right.circle.fill")
                         }
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                     )
             }
-
         }
     }
 }

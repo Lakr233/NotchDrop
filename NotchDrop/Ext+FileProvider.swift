@@ -10,11 +10,25 @@ import Foundation
 import UniformTypeIdentifiers
 
 extension NSItemProvider {
+    private func duplicateToOurStorage(_ url: URL?) throws -> URL {
+        guard let url else { throw NSError() }
+        let temp = temporaryDirectory
+            .appendingPathComponent("TemporaryDrop")
+            .appendingPathComponent(UUID().uuidString)
+            .appendingPathComponent(url.lastPathComponent)
+        try? FileManager.default.createDirectory(
+            at: temp.deletingLastPathComponent(),
+            withIntermediateDirectories: true
+        )
+        try FileManager.default.copyItem(at: url, to: temp)
+        return temp
+    }
+
     func convertToFilePathThatIsWhatWeThinkItWillWorkWithNotchDrop() -> URL? {
         var url: URL?
         let sem = DispatchSemaphore(value: 0)
         _ = loadObject(ofClass: URL.self) { item, _ in
-            url = item
+            url = try? self.duplicateToOurStorage(item)
             sem.signal()
         }
         sem.wait()
@@ -23,18 +37,7 @@ extension NSItemProvider {
                 forTypeIdentifier: UTType.data.identifier
             ) { input, _, _ in
                 defer { sem.signal() }
-                guard let input else { return }
-                let file = temporaryDirectory
-                    .appendingPathComponent(UUID().uuidString)
-                    .appendingPathComponent(input.lastPathComponent)
-                try? FileManager.default.createDirectory(
-                    at: file.deletingLastPathComponent(),
-                    withIntermediateDirectories: true
-                )
-                try? FileManager.default.copyItem(at: input, to: file)
-                if FileManager.default.fileExists(atPath: file.path) {
-                    url = file
-                }
+                url = try? self.duplicateToOurStorage(input)
             }
             sem.wait()
         }

@@ -37,18 +37,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         try? FileManager.default.removeItem(at: temporaryDirectory)
     }
 
+    func findScreenFitsOurNeeds() -> NSScreen? {
+        if let screen = NSScreen.buildin, screen.notchSize != .zero { return screen }
+        return .main
+    }
+
     @objc func rebuildApplicationWindows() {
         defer { isFirstOpen = false }
         if let mainWindowController {
             mainWindowController.destroy()
         }
         mainWindowController = nil
-        guard let mainScreen = NSScreen.main else {
-            if isFirstOpen {
-                NSAlert.popError(NSLocalizedString("Your current screen does not have a notch", comment: ""))
-            }
-            return
-        }
+        guard let mainScreen = findScreenFitsOurNeeds() else { return }
         mainWindowController = .init(screen: mainScreen)
         if isFirstOpen { mainWindowController?.openAfterCreate = true }
     }

@@ -20,7 +20,7 @@ struct DropItemView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 64)
-            Text(item.name)
+            Text(item.fileName)
                 .multilineTextAlignment(.center)
                 .font(.system(.footnote, design: .rounded))
                 .frame(maxWidth: 64)
@@ -31,11 +31,11 @@ struct DropItemView: View {
             removal: .movingParts.poof
         ))
         .contentShape(Rectangle())
-        .onDrag { NSItemProvider(object: item.decisionURL as NSURL) }
+        .onDrag { NSItemProvider(object: item.storageURL as NSURL) }
         .onTapGesture {
             vm.notchClose()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                NSWorkspace.shared.open(item.duplicatedURL)
+                NSWorkspace.shared.open(item.storageURL)
             }
         }
         .overlay {
