@@ -67,6 +67,7 @@
 		5044EEA12C3B126F00071C5C /* TrayDrop+DropItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItemView.swift"; sourceTree = "<group>"; };
 		5044EEA32C3B140F00071C5C /* Ext+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+URL.swift"; sourceTree = "<group>"; };
 		50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotchViewModel+Events.swift"; sourceTree = "<group>"; };
+		50D7EFF22C3E484C005AC04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		50E26E242C3AF2F1007CF247 /* AirDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrop.swift; sourceTree = "<group>"; };
 		50E26E262C3AF5E9007CF247 /* TrayDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayDrop.swift; sourceTree = "<group>"; };
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		504381822C3A86EA000ED325 /* NotchDrop */ = {
 			isa = PBXGroup;
 			children = (
+				50D7EFF22C3E484C005AC04E /* Info.plist */,
 				5043818C2C3A86EC000ED325 /* NotchDrop.entitlements */,
 				2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */,
 				504381872C3A86EC000ED325 /* Assets.xcassets */,
@@ -395,11 +397,12 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotchDrop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -408,7 +411,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -424,11 +427,12 @@
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotchDrop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -437,7 +441,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

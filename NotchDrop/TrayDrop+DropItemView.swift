@@ -39,6 +39,7 @@ struct DropItemView: View {
         .animation(vm.animation, value: hover)
         .onDrag { NSItemProvider(contentsOf: item.storageURL) ?? .init() }
         .onTapGesture {
+            guard !vm.optionKeyPressed else { return }
             vm.notchClose()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 NSWorkspace.shared.open(item.storageURL)
