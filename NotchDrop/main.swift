@@ -41,6 +41,16 @@ try? FileManager.default.createDirectory(
 let pidFile = documentsDirectory.appendingPathComponent("ProcessIdentifier")
 
 do {
+    let prevIdentifier = try String(contentsOf: pidFile, encoding: .utf8)
+    if let prev = Int(prevIdentifier) {
+        if let app = NSRunningApplication(processIdentifier: pid_t(prev)) {
+            app.terminate()
+        }
+    }
+} catch { }
+try? FileManager.default.removeItem(at: pidFile)
+
+do {
     let pid = String(NSRunningApplication.current.processIdentifier)
     try pid.write(to: pidFile, atomically: true, encoding: .utf8)
 } catch {

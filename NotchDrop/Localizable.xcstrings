@@ -128,23 +128,6 @@
           }
         }
       }
-    },
-    "Your current screen does not have a notch" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "您当前的屏幕没有刘海 因此无法使用挪翅丢"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "目前的螢幕沒有瀏海，無法使用挪翅丟"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"

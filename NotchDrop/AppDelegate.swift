@@ -63,4 +63,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
     }
+    
+    func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
+        NSApp.terminate(nil)
+        return false
+    }
 }

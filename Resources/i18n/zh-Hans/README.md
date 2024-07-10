@@ -23,11 +23,9 @@
 
 如果系统提示无法打开该应用程序，请按住 Control 键，点击应用程序图标，然后选择“打开”。
 
-关闭应用程序，请在终端中执行以下命令：
+从版本 2.0 起，只需再次运行软件，即可关闭。
 
-```shell
-pkill NotchDrop
-```
+~~关闭应用程序，请在终端中执行以下命令： `pkill NotchDrop`~~
 
 或者，你也可以运行资源文件夹中的 [KillNotchDrop.command](../../KillNotchDrop.command) 文件。
 

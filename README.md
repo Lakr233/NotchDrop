@@ -26,11 +26,9 @@ Download the latest version from [Releases](https://github.com/Lakr233/NotchDrop
 
 If your system doesn't allow you to open the app, hold the Control key, click the app, and select Open.
 
-To close the app, execute the following command in the terminal:
+Starting from version 2.0, simply open the app again.
 
-```shell
-pkill NotchDrop
-```
+~~To close the app, execute the following command in the terminal: `pkill NotchDrop`~~
 
 Alternatively, you can use the [Command File](./Resources/KillNotchDrop.command) provided in the Resources folder.
 
