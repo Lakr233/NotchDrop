@@ -47,7 +47,7 @@ do {
             app.terminate()
         }
     }
-} catch { }
+} catch {}
 try? FileManager.default.removeItem(at: pidFile)
 
 do {
@@ -59,7 +59,7 @@ do {
 }
 
 if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
-    FileManager.default.fileExists(atPath: appStoreReceiptURL.path)
+   FileManager.default.fileExists(atPath: appStoreReceiptURL.path)
 {
     NotchViewModel().openedSponsorPage = true // download from appstore
 }
