@@ -27,6 +27,14 @@ extension NotchViewModel {
                     } else if deviceNotchRect.insetBy(dx: inset, dy: inset).contains(mouseLocation) {
                         notchClose()
                         // for the same height as device notch, open the url of project
+                    } else if headlineOpenedRect.contains(mouseLocation) {
+                        // for clicking headline which mouse event may handled by another app
+                        // open the menu
+                        if let nextValue = ContentType(rawValue: contentType.rawValue + 1) {
+                            contentType = nextValue
+                        } else {
+                            contentType = ContentType(rawValue: 0)!
+                        }
                     }
                 case .closed, .popping:
                     // touch inside, open
@@ -80,7 +88,7 @@ extension NotchViewModel {
             guard let self else { return }
             switch status {
             case .opened:
-                guard openedBy == .drag else { return }
+                guard openReason == .drag else { return }
                 if deviceNotchRect.insetBy(dx: -14, dy: -14).contains(location) {
                     break
                 }

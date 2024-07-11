@@ -32,20 +32,23 @@ class NotchViewModel: NSObject, ObservableObject {
     let notchOpenedSize: CGSize = .init(width: 600, height: 150)
     let dropDetectorRange: CGFloat = 32
 
-    enum Status {
+    enum Status: String, Codable, Hashable, Equatable {
         case closed
         case opened
         case popping
     }
 
-    enum OpenedBy {
+    enum OpenReason: String, Codable, Hashable, Equatable {
         case click
         case drag
         case boot
         case unknown
     }
 
-    var openedBy: OpenedBy = .unknown
+    enum ContentType: Int, Codable, Hashable, Equatable {
+        case normal
+        case menu
+    }
 
     var notchOpenedRect: CGRect {
         .init(
@@ -56,7 +59,19 @@ class NotchViewModel: NSObject, ObservableObject {
         )
     }
 
+    var headlineOpenedRect: CGRect {
+        .init(
+            x: screenRect.origin.x + (screenRect.width - notchOpenedSize.width) / 2,
+            y: screenRect.origin.y + screenRect.height - deviceNotchRect.height,
+            width: notchOpenedSize.width,
+            height: deviceNotchRect.height
+        )
+    }
+
     @Published private(set) var status: Status = .closed
+    @Published var openReason: OpenReason = .unknown
+    @Published var contentType: ContentType = .normal
+
     @Published var spacing: CGFloat = 16
     @Published var cornerRadius: CGFloat = 16
     @Published var deviceNotchRect: CGRect = .zero
@@ -67,18 +82,20 @@ class NotchViewModel: NSObject, ObservableObject {
     @PublishedPersist(key: "OpenedSponsorPage", defaultValue: false)
     var openedSponsorPage: Bool
 
-    func notchOpen(_ by: OpenedBy) {
-        openedBy = by
+    func notchOpen(_ reason: OpenReason) {
+        openReason = reason
         status = .opened
+        contentType = .normal
     }
 
     func notchClose() {
-        openedBy = .unknown
+        openReason = .unknown
         status = .closed
+        contentType = .normal
     }
 
     func notchPop() {
-        openedBy = .unknown
+        openReason = .unknown
         status = .popping
     }
 }

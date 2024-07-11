@@ -81,4 +81,8 @@ class TrayDrop: ObservableObject {
         inEdit.remove(item)
         items = inEdit
     }
+
+    func removeAll() {
+        items.forEach { delete(item: $0) }
+    }
 }

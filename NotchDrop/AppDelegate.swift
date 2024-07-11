@@ -27,7 +27,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let timer = Timer.scheduledTimer(
             withTimeInterval: 1,
             repeats: true
-        ) { [weak self] _ in self?.determineIfProcessIdentifierMatches() }
+        ) { [weak self] _ in
+            self?.determineIfProcessIdentifierMatches()
+            self?.makeKeyAndVisibleIfNeeded()
+        }
         self.timer = timer
 
         rebuildApplicationWindows()
@@ -64,8 +67,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    func makeKeyAndVisibleIfNeeded() {
+        guard let controller = mainWindowController,
+              let window = controller.window,
+              let vm = controller.vm,
+              vm.status == .opened
+        else { return }
+        window.makeKeyAndOrderFront(nil)
+    }
+
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
-        NSApp.terminate(nil)
-        return false
+        guard let controller = mainWindowController,
+              let window = controller.window,
+              let vm = controller.vm
+        else { return true }
+        vm.notchOpen(.click)
+        return true
     }
 }

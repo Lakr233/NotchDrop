@@ -11,7 +11,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct AirDropView: View {
-    @ObservedObject var vm: NotchViewModel
+    @StateObject var vm: NotchViewModel
 
     @State var trigger: UUID = .init()
     @State var targeting = false
@@ -38,7 +38,7 @@ struct AirDropView: View {
                 }
             }, set: { _ in }),
             speed: .init(get: {
-                targeting ? 2 : 1
+                targeting ? 1.5 : 0
             }, set: { _ in }),
             transitionSpeed: .constant(25)
         )
