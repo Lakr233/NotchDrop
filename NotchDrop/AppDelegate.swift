@@ -78,7 +78,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
         guard let controller = mainWindowController,
-              let window = controller.window,
               let vm = controller.vm
         else { return true }
         vm.notchOpen(.click)
