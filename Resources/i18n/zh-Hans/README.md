@@ -21,8 +21,6 @@
 
 请从 [Releases](https://github.com/Lakr233/NotchDrop/releases) 页面下载最新版本。
 
-从版本 2.0 起，只需再次运行软件，即可关闭挪翅丢。
-
 ## 🧑‍⚖️ 许可证
 
 [MIT License](./LICENSE)

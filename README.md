@@ -24,8 +24,6 @@ Transform your MacBook's notch into a convenient file drop zone.
 
 Download the latest version from [Releases](https://github.com/Lakr233/NotchDrop/releases).
 
-Starting from version 2.0, simply run the software again to close it.​
-
 ## 🧑‍⚖️ License
 
 [MIT License](./LICENSE)
