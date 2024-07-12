@@ -18,12 +18,6 @@ private let availableDirectories = FileManager
     .urls(for: .documentDirectory, in: .userDomainMask)
 let documentsDirectory = availableDirectories[0]
     .appendingPathComponent("NotchDrop")
-try? FileManager.default.createDirectory(
-    at: documentsDirectory,
-    withIntermediateDirectories: true,
-    attributes: nil
-)
-
 let temporaryDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
     .appendingPathComponent(bundleIdentifier)
 try? FileManager.default.removeItem(at: temporaryDirectory)
