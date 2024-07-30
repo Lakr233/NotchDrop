@@ -18,7 +18,6 @@ struct NotchMenuView: View {
             if !vm.openedSponsorPage { donate }
             github
             clear
-            settings
         }
     }
 
@@ -29,7 +28,8 @@ struct NotchMenuView: View {
             title: "GitHub"
         )
         .onTapGesture {
-            NSWorkspace.shared.open(productPage)
+            NSWorkspace.shared.open(sponsorPage)
+            vm.openedSponsorPage = true
             vm.notchClose()
         }
         .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
@@ -73,17 +73,6 @@ struct NotchMenuView: View {
         .onTapGesture {
             tvm.removeAll()
             vm.notchClose()
-        }
-        .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
-    }
-    var settings: some View {
-        ColorButton(
-            color: ColorfulPreset.colorful.colors,
-            image: Image(systemName: "gear"),
-            title: LocalizedStringKey("Settings")
-        )
-        .onTapGesture {
-            vm.showSettings()
         }
         .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
     }

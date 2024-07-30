@@ -1,3 +1,10 @@
+//
+//  TrayDrop.swift
+//  NotchDrop
+//
+//  Created by 秋星桥 on 2024/7/8.
+//
+
 import Cocoa
 import Combine
 import Foundation
@@ -6,14 +13,7 @@ import OrderedCollections
 class TrayDrop: ObservableObject {
     static let shared = TrayDrop()
 
-    static var keepInterval: TimeInterval {
-        get {
-            return UserDefaults.standard.double(forKey: "keepInterval")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "keepInterval")
-        }
-    }
+    static let keepInterval = TimeInterval(60 * 60 * 24 * 7)
 
     private init() {
         cleanExpiredFiles()

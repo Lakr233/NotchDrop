@@ -24,12 +24,7 @@ struct NotchContentView: View {
             case .menu:
                 NotchMenuView(vm: vm)
                     .transition(.scale(scale: 0.8).combined(with: .opacity))
-            case .settings:
-                NotchSettingsView(vm: vm)
-                    .transition(.scale(scale: 0.8).combined(with: .opacity))
             }
-            
-            
         }
         .animation(vm.animation, value: vm.contentType)
     }
