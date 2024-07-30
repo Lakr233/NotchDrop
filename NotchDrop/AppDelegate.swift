@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var timer: Timer?
 
+    
     func applicationDidFinishLaunching(_: Notification) {
         NotificationCenter.default.addObserver(
             self,
@@ -83,4 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         vm.notchOpen(.click)
         return true
     }
+    
+
+
 }

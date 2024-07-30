@@ -6,36 +6,65 @@
 //
 
 import SwiftUI
+import LaunchAtLogin
 
-struct NotchSeetingsView: View {
+struct NotchSettingsView: View {
     @StateObject var vm: NotchViewModel
 
     var body: some View {
-        ZStack {
-            switch vm.contentType {
-            case .normal:
-                HStack(spacing: vm.spacing) {
-                    AirDropView(vm: vm)
-                    TrayView(vm: vm)
+        VStack(spacing: vm.spacing) {
+            HStack {
+                Picker("Language: " , selection: $vm.selectedLanguage) {
+                    ForEach(NotchViewModel.Language.allCases) { language in
+                        Text(language.localized).tag(language)
+                    }
                 }
-                .transition(.scale(scale: 0.8).combined(with: .opacity))
-            case .menu:
-                NotchMenuView(vm: vm)
-                    .transition(.scale(scale: 0.8).combined(with: .opacity))
-            case .settings:
-                VStack(spacing: vm.spacing) {
-                    NotchHeaderView(vm: vm)
-//                    NotchSettingsContentView(vm: vm)
+                .pickerStyle(MenuPickerStyle())
+                .frame(width: vm.selectedLanguage == .simplifiedChinese || vm.selectedLanguage == .traditionalChinese ? 220 : 160)
+                
+                LaunchAtLogin.Toggle{
+                    Text(NSLocalizedString("Launch at Login", comment: ""))
+                
                 }
-                .transition(.scale(scale: 0.8).combined(with: .opacity))
+                    .padding(.leading, 60) // Adjust the padding to reduce the space
+                Spacer()
             }
+            .padding(.vertical, 5)
+
+            HStack {
+                Picker("File Storage Time: ", selection: $vm.selectedFileStorageTime) {
+                    ForEach(NotchViewModel.FileStorageTime.allCases) { time in
+                        Text(time.localized).tag(time)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .frame(width: 200)
+
+                // Custom Storage Time (if custom is selected)
+                if vm.selectedFileStorageTime == .custom {
+                    TextField("Days", value: $vm.customStorageTime, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 50)
+                        .padding(.leading, 10)
+                    Picker("", selection: $vm.customStorageTimeUnit) {
+                        ForEach(NotchViewModel.CustomstorageTimeUnit.allCases) { unit in
+                            Text(unit.localized).tag(unit)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .frame(width: 90)
+                }
+                Spacer()
+            }
+            .padding(.vertical, 5)
         }
-        .animation(vm.animation, value: vm.contentType)
+        .padding()
+        .transition(.scale(scale: 0.8).combined(with: .opacity))
     }
 }
 
 #Preview {
-    NotchContentView(vm: .init())
+    NotchSettingsView(vm: .init())
         .padding()
         .frame(width: 600, height: 150, alignment: .center)
         .background(.black)

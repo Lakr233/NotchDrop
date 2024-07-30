@@ -1,12 +1,3 @@
-//
-//  TrayDrop+View.swift
-//  NotchDrop
-//
-//  Created by 秋星桥 on 2024/7/8.
-//
-
-import Foundation
-import Pow
 import SwiftUI
 
 struct TrayView: View {
@@ -14,6 +5,25 @@ struct TrayView: View {
     @StateObject var tvm = TrayDrop.shared
 
     @State private var targeting = false
+    
+    
+    var storageTime: String {
+            switch vm.selectedFileStorageTime {
+            case .oneDay:
+                return NSLocalizedString("a day", comment: "")
+            case .twoDays:
+                return NSLocalizedString("two days", comment: "")
+            case .threeDays:
+                return NSLocalizedString("three days", comment: "")
+            case .oneWeek:
+                return NSLocalizedString("a week", comment: "")
+            case .never:
+                return NSLocalizedString("forever", comment: "")
+            case .custom:
+                let localizedTimeUnit = NSLocalizedString(vm.customStorageTimeUnit.localized.lowercased(), comment: "")
+                return "\(vm.customStorageTime) \(localizedTimeUnit)"
+            }
+        }
 
     var body: some View {
         panel
@@ -28,7 +38,10 @@ struct TrayView: View {
             .strokeBorder(style: StrokeStyle(lineWidth: 4, dash: [10]))
             .foregroundStyle(.white.opacity(0.1))
             .background(loading)
-            .overlay { content.padding() }
+            .overlay {
+                content
+                    .padding()
+            }
             .animation(vm.animation, value: tvm.items)
             .animation(vm.animation, value: tvm.isLoading)
     }
@@ -45,25 +58,28 @@ struct TrayView: View {
             )
     }
 
-    @ViewBuilder
     var content: some View {
-        if tvm.isEmpty {
-            VStack(spacing: 8) {
-                Image(systemName: "tray.and.arrow.down.fill")
-                Text("Drag files here to keep them for a day & Press Option to delete")
-            }
-            .font(.system(.headline, design: .rounded))
-        } else {
-            ScrollView(.horizontal) {
-                HStack(spacing: vm.spacing) {
-                    ForEach(tvm.items) { item in
-                        DropItemView(item: item, vm: vm, tvm: tvm)
-                    }
+        Group {
+            if tvm.isEmpty {
+                VStack(spacing: 8) {
+                    Image(systemName: "tray.and.arrow.down.fill")
+
+
+                    Text(NSLocalizedString("Drag files here to keep them for", comment: "") + " " + storageTime + " " + NSLocalizedString("& Press Option to delete", comment: ""))
+                        .font(.system(.headline, design: .rounded))
                 }
-                .padding(vm.spacing)
+            } else {
+                ScrollView(.horizontal) {
+                    HStack(spacing: vm.spacing) {
+                        ForEach(tvm.items) { item in
+                            DropItemView(item: item, vm: vm, tvm: tvm)
+                        }
+                    }
+                    .padding(vm.spacing)
+                }
+                .padding(-vm.spacing)
+                .scrollIndicators(.never)
             }
-            .padding(-vm.spacing)
-            .scrollIndicators(.never)
         }
     }
 }
