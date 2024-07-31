@@ -41,6 +41,8 @@
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
 		50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */; };
 		50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */; };
+		60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AD62862C579F4400299297 /* NotchSettingsView.swift */; };
+		60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 60AD628B2C59150C00299297 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,7 @@
 		50E26E262C3AF5E9007CF247 /* TrayDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayDrop.swift; sourceTree = "<group>"; };
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
 		50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSImage.swift"; sourceTree = "<group>"; };
+		60AD62862C579F4400299297 /* NotchSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 				5044EEAF2C3B174100071C5C /* HeapModule in Frameworks */,
 				5044EEAB2C3B174100071C5C /* DequeModule in Frameworks */,
 				5044EEA92C3B174100071C5C /* Collections in Frameworks */,
+				60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */,
 				5044EEA72C3B174100071C5C /* BitCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +130,7 @@
 				504381B02C3AE0B6000ED325 /* NotchHeaderView.swift */,
 				503D8EB92C3F838200E173FF /* NotchMenuView.swift */,
 				504381AE2C3ADFF2000ED325 /* NotchContentView.swift */,
+				60AD62862C579F4400299297 /* NotchSettingsView.swift */,
 				504381A52C3A8CFD000ED325 /* NotchViewController.swift */,
 				504381A72C3A926E000ED325 /* NotchViewModel.swift */,
 				50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */,
@@ -178,6 +183,7 @@
 				5044EEAA2C3B174100071C5C /* DequeModule */,
 				5044EEAC2C3B174100071C5C /* HashTreeCollections */,
 				5044EEAE2C3B174100071C5C /* HeapModule */,
+				60AD628B2C59150C00299297 /* LaunchAtLogin */,
 			);
 			productName = NotchDrop;
 			productReference = 504381802C3A86EA000ED325 /* NotchDrop.app */;
@@ -213,6 +219,7 @@
 				5043819C2C3A8ACA000ED325 /* XCRemoteSwiftPackageReference "ColorfulX" */,
 				5044EE9A2C3B082300071C5C /* XCRemoteSwiftPackageReference "Pow" */,
 				5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */,
+				60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
 			);
 			productRefGroup = 504381812C3A86EA000ED325 /* Products */;
 			projectDirPath = "";
@@ -263,6 +270,7 @@
 				504381AA2C3A9514000ED325 /* EventMonitor.swift in Sources */,
 				5043819B2C3A8A06000ED325 /* AppDelegate.swift in Sources */,
 				504381932C3A8755000ED325 /* main.swift in Sources */,
+				60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */,
 				504381A82C3A926E000ED325 /* NotchViewModel.swift in Sources */,
 				5044EEA02C3B116000071C5C /* PublishedPersist.swift in Sources */,
 			);
@@ -402,7 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = 964G86XT2P;
+				DEVELOPMENT_TEAM = 3M9AU26G24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -432,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = 964G86XT2P;
+				DEVELOPMENT_TEAM = 3M9AU26G24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -501,6 +509,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -538,6 +554,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = HeapModule;
+		};
+		60AD628B2C59150C00299297 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */;
+			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
