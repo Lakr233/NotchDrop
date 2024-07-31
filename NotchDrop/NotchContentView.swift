@@ -28,8 +28,6 @@ struct NotchContentView: View {
                 NotchSettingsView(vm: vm)
                     .transition(.scale(scale: 0.8).combined(with: .opacity))
             }
-            
-            
         }
         .animation(vm.animation, value: vm.contentType)
     }

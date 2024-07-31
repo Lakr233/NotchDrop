@@ -15,10 +15,10 @@ struct NotchMenuView: View {
     var body: some View {
         HStack(spacing: vm.spacing) {
             close
-            if !vm.openedSponsorPage { donate }
             github
-            clear
+            donate
             settings
+            clear
         }
     }
 
@@ -38,12 +38,11 @@ struct NotchMenuView: View {
     var donate: some View {
         ColorButton(
             color: ColorfulPreset.colorful.colors,
-            image: Image(systemName: "dollarsign"),
-            title: "Donate"
+            image: Image(systemName: "heart.fill"),
+            title: "Love Drop"
         )
         .onTapGesture {
             NSWorkspace.shared.open(sponsorPage)
-            vm.openedSponsorPage = true
             vm.notchClose()
         }
         .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
@@ -76,6 +75,7 @@ struct NotchMenuView: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: vm.cornerRadius))
     }
+
     var settings: some View {
         ColorButton(
             color: ColorfulPreset.colorful.colors,

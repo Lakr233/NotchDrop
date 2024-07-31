@@ -52,12 +52,6 @@ do {
     exit(1)
 }
 
-if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
-   FileManager.default.fileExists(atPath: appStoreReceiptURL.path)
-{
-    NotchViewModel().openedSponsorPage = true // download from appstore
-}
-
 _ = TrayDrop.shared
 
 private let delegate = AppDelegate()

@@ -5,25 +5,24 @@ struct TrayView: View {
     @StateObject var tvm = TrayDrop.shared
 
     @State private var targeting = false
-    
-    
+
     var storageTime: String {
-            switch vm.selectedFileStorageTime {
-            case .oneDay:
-                return NSLocalizedString("a day", comment: "")
-            case .twoDays:
-                return NSLocalizedString("two days", comment: "")
-            case .threeDays:
-                return NSLocalizedString("three days", comment: "")
-            case .oneWeek:
-                return NSLocalizedString("a week", comment: "")
-            case .never:
-                return NSLocalizedString("forever", comment: "")
-            case .custom:
-                let localizedTimeUnit = NSLocalizedString(vm.customStorageTimeUnit.localized.lowercased(), comment: "")
-                return "\(vm.customStorageTime) \(localizedTimeUnit)"
-            }
+        switch tvm.selectedFileStorageTime {
+        case .oneDay:
+            return NSLocalizedString("a day", comment: "")
+        case .twoDays:
+            return NSLocalizedString("two days", comment: "")
+        case .threeDays:
+            return NSLocalizedString("three days", comment: "")
+        case .oneWeek:
+            return NSLocalizedString("a week", comment: "")
+        case .never:
+            return NSLocalizedString("forever", comment: "")
+        case .custom:
+            let localizedTimeUnit = NSLocalizedString(tvm.customStorageTimeUnit.localized.lowercased(), comment: "")
+            return "\(tvm.customStorageTime) \(localizedTimeUnit)"
         }
+    }
 
     var body: some View {
         panel
@@ -63,7 +62,6 @@ struct TrayView: View {
             if tvm.isEmpty {
                 VStack(spacing: 8) {
                     Image(systemName: "tray.and.arrow.down.fill")
-
 
                     Text(NSLocalizedString("Drag files here to keep them for", comment: "") + " " + storageTime + " " + NSLocalizedString("& Press Option to delete", comment: ""))
                         .font(.system(.headline, design: .rounded))

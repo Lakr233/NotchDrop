@@ -133,6 +133,12 @@ extension NotchViewModel {
                 }
             }
             .store(in: &cancellables)
+
+        $selectedLanguage
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { $0.apply() }
+            .store(in: &cancellables)
     }
 
     func destroy() {

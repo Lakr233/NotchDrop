@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2700D8EE2C3CFD37005ACDDF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */; };
+		501F0E8C2C59E6BD00F0113C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501F0E8B2C59E6BD00F0113C /* Language.swift */; };
 		502E41D62C3CEC990060660E /* Ext+NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502E41D52C3CEC990060660E /* Ext+NSAlert.swift */; };
 		503D8EBA2C3F838200E173FF /* NotchMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D8EB92C3F838200E173FF /* NotchMenuView.swift */; };
 		504381882C3A86EC000ED325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504381872C3A86EC000ED325 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		501F0E8B2C59E6BD00F0113C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		502E41D52C3CEC990060660E /* Ext+NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSAlert.swift"; sourceTree = "<group>"; };
 		503D8EB92C3F838200E173FF /* NotchMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchMenuView.swift; sourceTree = "<group>"; };
 		504381802C3A86EA000ED325 /* NotchDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				504381872C3A86EC000ED325 /* Assets.xcassets */,
 				504381922C3A8755000ED325 /* main.swift */,
 				5043819A2C3A8A06000ED325 /* AppDelegate.swift */,
+				501F0E8B2C59E6BD00F0113C /* Language.swift */,
 				504381982C3A8893000ED325 /* NotchWindow.swift */,
 				504381A32C3A8C7E000ED325 /* NotchWindowController.swift */,
 				5043819F2C3A8BA1000ED325 /* NotchView.swift */,
@@ -268,6 +271,7 @@
 				502E41D62C3CEC990060660E /* Ext+NSAlert.swift in Sources */,
 				504381A62C3A8CFD000ED325 /* NotchViewController.swift in Sources */,
 				504381AA2C3A9514000ED325 /* EventMonitor.swift in Sources */,
+				501F0E8C2C59E6BD00F0113C /* Language.swift in Sources */,
 				5043819B2C3A8A06000ED325 /* AppDelegate.swift in Sources */,
 				504381932C3A8755000ED325 /* main.swift in Sources */,
 				60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */,
@@ -407,10 +411,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = 3M9AU26G24;
+				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -437,10 +442,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NotchDrop/NotchDrop.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = 3M9AU26G24;
+				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

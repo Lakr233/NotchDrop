@@ -6,23 +6,54 @@ import OrderedCollections
 class TrayDrop: ObservableObject {
     static let shared = TrayDrop()
 
-    static var keepInterval: TimeInterval {
-        get {
-            return UserDefaults.standard.double(forKey: "keepInterval")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "keepInterval")
-        }
-    }
+    var cancellables = Set<AnyCancellable>()
+
+    @Persist(key: "keepInterval", defaultValue: 3600 * 24)
+    var keepInterval: TimeInterval
 
     private init() {
         cleanExpiredFiles()
+
+        Publishers.CombineLatest3(
+            $selectedFileStorageTime.removeDuplicates(),
+            $customStorageTime.removeDuplicates(),
+            $customStorageTimeUnit.removeDuplicates()
+        )
+        .map { selectedFileStorageTime, customStorageTime, customStorageTimeUnit in
+            let customTime = switch customStorageTimeUnit {
+            case .days:
+                TimeInterval(customStorageTime) * 60 * 60 * 24
+            case .weeks:
+                TimeInterval(customStorageTime) * 60 * 60 * 24 * 7
+            case .months:
+                TimeInterval(customStorageTime) * 60 * 60 * 24 * 30
+            case .years:
+                TimeInterval(customStorageTime) * 60 * 60 * 24 * 365
+            }
+            let ans = selectedFileStorageTime.toTimeInterval(customTime: customTime)
+            print("[*] using interval \(ans) to keep files")
+            return ans
+        }
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] output in
+            self?.keepInterval = output
+        }
+        .store(in: &cancellables)
     }
 
     var isEmpty: Bool { items.isEmpty }
 
     @PublishedPersist(key: "TrayDropItems", defaultValue: .init())
     var items: OrderedSet<DropItem>
+
+    @PublishedPersist(key: "selectedFileStorageTime", defaultValue: .oneDay)
+    var selectedFileStorageTime: FileStorageTime
+
+    @PublishedPersist(key: "customStorageTime", defaultValue: 1)
+    var customStorageTime: Int
+
+    @PublishedPersist(key: "customStorageTimeUnit", defaultValue: .days)
+    var customStorageTimeUnit: CustomstorageTimeUnit
 
     @Published var isLoading: Int = 0
 
@@ -84,5 +115,52 @@ class TrayDrop: ObservableObject {
 
     func removeAll() {
         items.forEach { delete(item: $0) }
+    }
+}
+
+extension TrayDrop {
+    enum FileStorageTime: String, CaseIterable, Identifiable, Codable {
+        case oneDay = "1 Day"
+        case twoDays = "2 Days"
+        case threeDays = "3 Days"
+        case oneWeek = "1 Week"
+        case never = "Forever"
+        case custom = "Custom"
+
+        var id: String { rawValue }
+
+        var localized: String {
+            NSLocalizedString(rawValue, comment: "")
+        }
+
+        func toTimeInterval(customTime: TimeInterval) -> TimeInterval {
+            switch self {
+            case .oneDay:
+                60 * 60 * 24
+            case .twoDays:
+                60 * 60 * 24 * 2
+            case .threeDays:
+                60 * 60 * 24 * 3
+            case .oneWeek:
+                60 * 60 * 24 * 7
+            case .never:
+                TimeInterval.infinity
+            case .custom:
+                customTime
+            }
+        }
+    }
+
+    enum CustomstorageTimeUnit: String, CaseIterable, Identifiable, Codable {
+        case days = "Days"
+        case weeks = "Weeks"
+        case months = "Months"
+        case years = "Years"
+
+        var id: String { rawValue }
+
+        var localized: String {
+            NSLocalizedString(rawValue, comment: "")
+        }
     }
 }
