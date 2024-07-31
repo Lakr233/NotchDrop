@@ -135,9 +135,13 @@ extension NotchViewModel {
             .store(in: &cancellables)
 
         $selectedLanguage
+            .dropFirst()
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
-            .sink { $0.apply() }
+            .sink { [weak self] output in
+                self?.notchClose()
+                output.apply()
+            }
             .store(in: &cancellables)
     }
 

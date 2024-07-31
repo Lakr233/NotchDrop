@@ -7,8 +7,6 @@
 
 import Cocoa
 
-private var languageSwitchedBefore: Bool = false
-
 enum Language: String, CaseIterable, Identifiable, Codable {
     case system = "Follow System"
     case english = "English"
@@ -22,8 +20,6 @@ enum Language: String, CaseIterable, Identifiable, Codable {
     }
 
     func apply() {
-        defer { languageSwitchedBefore = true }
-
         let languageCode: String?
         let local = Calendar.autoupdatingCurrent.locale?.identifier
         let region = local?.split(separator: "@").last?.split(separator: "_").last
@@ -49,7 +45,7 @@ enum Language: String, CaseIterable, Identifiable, Codable {
 
         Bundle.setLanguage(languageCode)
 
-        if languageSwitchedBefore {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             NSAlert.popRestart(
                 NSLocalizedString("The language has been changed. The app will restart for the changes to take effect.", comment: ""),
                 completion: restartApp
@@ -62,10 +58,10 @@ private func restartApp() {
     guard let appPath = Bundle.main.executablePath else { return }
     NSApp.terminate(nil)
 
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: appPath)
-        do { try process.run() } catch {}
+        try? process.run()
         exit(0)
     }
 }
