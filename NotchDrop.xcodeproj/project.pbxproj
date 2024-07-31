@@ -37,13 +37,13 @@
 		5044EEAB2C3B174100071C5C /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAA2C3B174100071C5C /* DequeModule */; };
 		5044EEAD2C3B174100071C5C /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAC2C3B174100071C5C /* HashTreeCollections */; };
 		5044EEAF2C3B174100071C5C /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAE2C3B174100071C5C /* HeapModule */; };
+		504A5D802C59EC2D004E8297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 504A5D7F2C59EC2D004E8297 /* LaunchAtLogin */; };
 		50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */; };
 		50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E242C3AF2F1007CF247 /* AirDrop.swift */; };
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
 		50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */; };
 		50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */; };
 		60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AD62862C579F4400299297 /* NotchSettingsView.swift */; };
-		60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 60AD628B2C59150C00299297 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,7 +92,7 @@
 				5044EEAF2C3B174100071C5C /* HeapModule in Frameworks */,
 				5044EEAB2C3B174100071C5C /* DequeModule in Frameworks */,
 				5044EEA92C3B174100071C5C /* Collections in Frameworks */,
-				60AD628C2C59150C00299297 /* LaunchAtLogin in Frameworks */,
+				504A5D802C59EC2D004E8297 /* LaunchAtLogin in Frameworks */,
 				5044EEA72C3B174100071C5C /* BitCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,7 +186,7 @@
 				5044EEAA2C3B174100071C5C /* DequeModule */,
 				5044EEAC2C3B174100071C5C /* HashTreeCollections */,
 				5044EEAE2C3B174100071C5C /* HeapModule */,
-				60AD628B2C59150C00299297 /* LaunchAtLogin */,
+				504A5D7F2C59EC2D004E8297 /* LaunchAtLogin */,
 			);
 			productName = NotchDrop;
 			productReference = 504381802C3A86EA000ED325 /* NotchDrop.app */;
@@ -222,7 +222,7 @@
 				5043819C2C3A8ACA000ED325 /* XCRemoteSwiftPackageReference "ColorfulX" */,
 				5044EE9A2C3B082300071C5C /* XCRemoteSwiftPackageReference "Pow" */,
 				5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */,
-				60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
+				504A5D7E2C59EC2D004E8297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 504381812C3A86EA000ED325 /* Products */;
 			projectDirPath = "";
@@ -414,7 +414,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -428,7 +428,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -445,7 +445,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -459,7 +459,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -515,9 +515,9 @@
 				minimumVersion = 1.1.1;
 			};
 		};
-		60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
+		504A5D7E2C59EC2D004E8297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -561,9 +561,9 @@
 			package = 5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = HeapModule;
 		};
-		60AD628B2C59150C00299297 /* LaunchAtLogin */ = {
+		504A5D7F2C59EC2D004E8297 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 60AD628A2C59150C00299297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */;
+			package = 504A5D7E2C59EC2D004E8297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
