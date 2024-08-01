@@ -52,6 +52,10 @@ do {
     exit(1)
 }
 
+let isAppStoreBuild = if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
+   FileManager.default.fileExists(atPath: appStoreReceiptURL.path)
+{ true } else { false }
+
 _ = TrayDrop.shared
 
 private let delegate = AppDelegate()

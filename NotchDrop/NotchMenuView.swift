@@ -16,7 +16,7 @@ struct NotchMenuView: View {
         HStack(spacing: vm.spacing) {
             close
             github
-            donate
+            if !isAppStoreBuild { donate }
             settings
             clear
         }
