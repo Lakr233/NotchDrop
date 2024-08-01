@@ -511,23 +511,6 @@
         }
       }
     },
-    "Restart now" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "立即重启"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "立即重新啟動"
-          }
-        }
-      }
-    },
     "Settings" : {
       "localizations" : {
         "zh-Hans" : {
@@ -567,7 +550,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "语言设置更改。需要重新启动APP以应用更改"
+            "value" : "语言设置已应用，请重新启动应用程序来完成更改。"
           }
         },
         "zh-Hant" : {

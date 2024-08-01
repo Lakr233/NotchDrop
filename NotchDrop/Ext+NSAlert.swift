@@ -22,14 +22,10 @@ extension NSAlert {
         alert.messageText = NSLocalizedString("Need Restart", comment: "")
         alert.alertStyle = .critical
         alert.informativeText = error
-        alert.addButton(withTitle: NSLocalizedString("Restart now", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Exit", comment: ""))
         alert.addButton(withTitle: NSLocalizedString("Later", comment: ""))
-
-        // Show alert and handle the response
         let response = alert.runModal()
-
         if response == .alertFirstButtonReturn {
-            // User clicked "Restart now"
             completion()
         }
     }
