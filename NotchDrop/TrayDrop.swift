@@ -12,8 +12,6 @@ class TrayDrop: ObservableObject {
     var keepInterval: TimeInterval
 
     private init() {
-        cleanExpiredFiles()
-
         Publishers.CombineLatest3(
             $selectedFileStorageTime.removeDuplicates(),
             $customStorageTime.removeDuplicates(),

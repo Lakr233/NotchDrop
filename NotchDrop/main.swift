@@ -57,6 +57,7 @@ let isAppStoreBuild = if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL
 { true } else { false }
 
 _ = TrayDrop.shared
+TrayDrop.shared.cleanExpiredFiles()
 
 private let delegate = AppDelegate()
 NSApplication.shared.delegate = delegate
