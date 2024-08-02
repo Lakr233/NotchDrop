@@ -15,12 +15,11 @@ Transform your MacBook's notch into a convenient file drop zone.
 - [x] Should work with your menu bar managers
 - [x] Drag and drop files to the notch
 - [x] Open AirDrop directly from the notch
-- [x] Automatically save files for 1 day
+- [x] Automatically save files for 1 day, can be configured
 - [x] Open files with a simple click
 - [x] Delete files by holding the option key and clicking the x mark
-- [x] No configuration needed
 - [x] Fully open source and privacy-focused
-- [x] Free of charge
+- [x] Free of charge if you do it yourself
 
 ## 🚀 Usage
 
