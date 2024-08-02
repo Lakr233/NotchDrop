@@ -4,6 +4,8 @@ Transform your MacBook's notch into a convenient file drop zone.
 
 [简体中文 🇨🇳](./Resources/i18n/zh-Hans/README.md)
 
+[![App Store Icon](./Resources/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg)](https://apps.apple.com/app/notchdrop/id6529528324)
+
 ## 👀 Preview
 
 ![Screenshot](./Resources/截屏2024-07-08%2003.14.34.png)

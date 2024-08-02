@@ -2,6 +2,8 @@
 
 将你的 MacBook 刘海变成一个方便的文件传输区域。
 
+[![App Store Icon](./Download_on_the_Mac_App_Store_Badge_CNSC_RGB_blk_092917.svg)
+
 ## 👀 预览
 
 ![屏幕截图](../../截屏2024-07-08%2003.14.34.png)
