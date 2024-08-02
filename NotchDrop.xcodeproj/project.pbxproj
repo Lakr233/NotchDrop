@@ -72,7 +72,6 @@
 		5044EE9F2C3B116000071C5C /* PublishedPersist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedPersist.swift; sourceTree = "<group>"; };
 		5044EEA12C3B126F00071C5C /* TrayDrop+DropItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItemView.swift"; sourceTree = "<group>"; };
 		5044EEA32C3B140F00071C5C /* Ext+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+URL.swift"; sourceTree = "<group>"; };
-		506F11322C5B996600BAA94D /* NotchDrop copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NotchDrop copy-Info.plist"; path = "/Users/qaq/Documents/GitHub/NotchDrop/NotchDrop copy-Info.plist"; sourceTree = "<absolute>"; };
 		50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotchViewModel+Events.swift"; sourceTree = "<group>"; };
 		50D7EFF22C3E484C005AC04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		50E26E242C3AF2F1007CF247 /* AirDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrop.swift; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 				504381822C3A86EA000ED325 /* NotchDrop */,
 				504381812C3A86EA000ED325 /* Products */,
 				504381AD2C3ADDAB000ED325 /* Frameworks */,
-				506F11322C5B996600BAA94D /* NotchDrop copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

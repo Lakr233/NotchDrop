@@ -53,6 +53,7 @@ do {
 }
 
 _ = TrayDrop.shared
+TrayDrop.shared.cleanExpiredFiles()
 
 private let delegate = AppDelegate()
 NSApplication.shared.delegate = delegate
