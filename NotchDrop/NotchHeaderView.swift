@@ -13,10 +13,16 @@ struct NotchHeaderView: View {
 
     var body: some View {
         HStack {
-            Text("Notch Drop")
+            Text(
+                vm.contentType == .settings
+                    ? "Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") (Build: \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"))"
+                    : "Notch Drop"
+            )
+            .contentTransition(.numericText())
             Spacer()
             Image(systemName: "ellipsis")
         }
+        .animation(vm.animation, value: vm.contentType)
         .font(.system(.headline, design: .rounded))
     }
 }
