@@ -27,6 +27,7 @@ struct NotchSettingsView: View {
                     Text(NSLocalizedString("Launch at Login", comment: ""))
                 }
                 .padding(.leading, 60) // Adjust the padding to reduce the space
+
                 Spacer()
             }
 
@@ -38,7 +39,6 @@ struct NotchSettingsView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
                 .frame(width: 200)
-
                 if tvm.selectedFileStorageTime == .custom {
                     TextField("Days", value: $tvm.customStorageTime, formatter: NumberFormatter())
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -56,12 +56,6 @@ struct NotchSettingsView: View {
             }
         }
         .padding()
-        .overlay(
-            Text("Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") (Build: \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"))")
-                .foregroundColor(.gray)
-                .padding([.bottom, .trailing]),
-            alignment: .bottomTrailing
-        )
         .transition(.scale(scale: 0.8).combined(with: .opacity))
     }
 }
