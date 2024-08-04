@@ -38,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_: Notification) {
         try? FileManager.default.removeItem(at: temporaryDirectory)
+        try? FileManager.default.removeItem(at: pidFile)
     }
 
     func findScreenFitsOurNeeds() -> NSScreen? {

@@ -52,10 +52,6 @@ do {
     exit(1)
 }
 
-let isAppStoreBuild = if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
-   FileManager.default.fileExists(atPath: appStoreReceiptURL.path)
-{ true } else { false }
-
 _ = TrayDrop.shared
 TrayDrop.shared.cleanExpiredFiles()
 
