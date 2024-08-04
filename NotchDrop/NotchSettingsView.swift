@@ -39,31 +39,31 @@ struct NotchSettingsView: View {
 								.pickerStyle(MenuPickerStyle())
 								.frame(width: 200)
 
-								if tvm.selectedFileStorageTime == .custom {
-										TextField("Days", value: $tvm.customStorageTime, formatter: NumberFormatter())
-												.textFieldStyle(RoundedBorderTextFieldStyle())
-												.frame(width: 50)
-												.padding(.leading, 10)
-										Picker("Time Unit", selection: $tvm.customStorageTimeUnit) {
-												ForEach(TrayDrop.CustomstorageTimeUnit.allCases) { unit in
-														Text(unit.localized).tag(unit)
-												}
-										}
-										.pickerStyle(MenuPickerStyle())
-										.frame(width: 200)
-								}
-								Spacer()
-						}
-				}
-				.padding()
-				.overlay(
-						Text("Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") (Build: \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"))")
-								.foregroundColor(.gray)
-								.padding([.bottom, .trailing]),
-						alignment: .bottomTrailing
-				)
-				.transition(.scale(scale: 0.8).combined(with: .opacity))
-		}
+                if tvm.selectedFileStorageTime == .custom {
+                    TextField("Days", value: $tvm.customStorageTime, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 50)
+                        .padding(.leading, 10)
+                    Picker("Time Unit", selection: $tvm.customStorageTimeUnit) {
+                        ForEach(TrayDrop.CustomstorageTimeUnit.allCases) { unit in
+                            Text(unit.localized).tag(unit)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .frame(width: 200)
+                }
+                Spacer()
+            }
+        }
+        .padding()
+        .overlay(
+            Text("Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") (Build: \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"))")
+                .foregroundColor(.gray)
+                .padding([.bottom, .trailing]),
+            alignment: .bottomTrailing
+        )
+        .transition(.scale(scale: 0.8).combined(with: .opacity))
+    }
 }
 
 #Preview {
