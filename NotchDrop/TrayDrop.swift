@@ -19,6 +19,8 @@ class TrayDrop: ObservableObject {
         )
         .map { selectedFileStorageTime, customStorageTime, customStorageTimeUnit in
             let customTime = switch customStorageTimeUnit {
+            case .hours:
+                TimeInterval(customStorageTime) * 60 * 60
             case .days:
                 TimeInterval(customStorageTime) * 60 * 60 * 24
             case .weeks:
@@ -118,6 +120,7 @@ class TrayDrop: ObservableObject {
 
 extension TrayDrop {
     enum FileStorageTime: String, CaseIterable, Identifiable, Codable {
+        case oneHour = "1 Hour"
         case oneDay = "1 Day"
         case twoDays = "2 Days"
         case threeDays = "3 Days"
@@ -133,6 +136,8 @@ extension TrayDrop {
 
         func toTimeInterval(customTime: TimeInterval) -> TimeInterval {
             switch self {
+            case .oneHour:
+                60 * 60
             case .oneDay:
                 60 * 60 * 24
             case .twoDays:
@@ -150,6 +155,7 @@ extension TrayDrop {
     }
 
     enum CustomstorageTimeUnit: String, CaseIterable, Identifiable, Codable {
+        case hours = "Hours"
         case days = "Days"
         case weeks = "Weeks"
         case months = "Months"
