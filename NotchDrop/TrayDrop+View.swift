@@ -8,6 +8,8 @@ struct TrayView: View {
 
     var storageTime: String {
         switch tvm.selectedFileStorageTime {
+        case .oneHour:
+            return NSLocalizedString("an hour", comment: "")
         case .oneDay:
             return NSLocalizedString("a day", comment: "")
         case .twoDays:
