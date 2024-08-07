@@ -225,9 +225,28 @@
           }
         }
       }
-},
+    },
     "an hour" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "an hour"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一小时"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一小時"
+          }
+        }
+      }
     },
     "Clear" : {
       "localizations" : {
@@ -495,6 +514,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "GitHub"
+          }
+        }
+      }
+    },
+    "Hours" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hours"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小时"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小時"
           }
         }
       }
