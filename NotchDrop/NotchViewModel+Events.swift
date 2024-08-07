@@ -68,16 +68,24 @@ extension NotchViewModel {
             .filter { $0 != .closed }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                withAnimation {
-                    self?.notchVisible = true
-                }
+                withAnimation { self?.notchVisible = true }
             }
             .store(in: &cancellables)
 
         $status
+            .filter { $0 == .popping }
+            .throttle(for: .seconds(0.5), scheduler: DispatchQueue.main, latest: false)
+            .sink { [weak self] _ in
+                guard NSEvent.pressedMouseButtons == 0 else { return }
+                self?.hapticSender.send()
+            }
+            .store(in: &cancellables)
+
+        hapticSender
+            .throttle(for: .seconds(0.5), scheduler: DispatchQueue.main, latest: false)
             .sink { _ in
                 NSHapticFeedbackManager.defaultPerformer.perform(
-                    .alignment,
+                    .levelChange,
                     performanceTime: .now
                 )
             }

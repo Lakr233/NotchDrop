@@ -77,6 +77,8 @@ class NotchViewModel: NSObject, ObservableObject {
     @PublishedPersist(key: "selectedLanguage", defaultValue: .system)
     var selectedLanguage: Language
 
+    let hapticSender = PassthroughSubject<Void, Never>()
+
     func notchOpen(_ reason: OpenReason) {
         openReason = reason
         status = .opened
