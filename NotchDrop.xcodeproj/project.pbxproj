@@ -38,6 +38,7 @@
 		5044EEAD2C3B174100071C5C /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAC2C3B174100071C5C /* HashTreeCollections */; };
 		5044EEAF2C3B174100071C5C /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EEAE2C3B174100071C5C /* HeapModule */; };
 		504A5D802C59EC2D004E8297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 504A5D7F2C59EC2D004E8297 /* LaunchAtLogin */; };
+		508C4DF22C631EF700642ADC /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 508C4DF12C631EF700642ADC /* InfoPlist.xcstrings */; };
 		50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */; };
 		50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E242C3AF2F1007CF247 /* AirDrop.swift */; };
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
@@ -72,6 +73,7 @@
 		5044EE9F2C3B116000071C5C /* PublishedPersist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedPersist.swift; sourceTree = "<group>"; };
 		5044EEA12C3B126F00071C5C /* TrayDrop+DropItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItemView.swift"; sourceTree = "<group>"; };
 		5044EEA32C3B140F00071C5C /* Ext+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+URL.swift"; sourceTree = "<group>"; };
+		508C4DF12C631EF700642ADC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotchViewModel+Events.swift"; sourceTree = "<group>"; };
 		50D7EFF22C3E484C005AC04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		50E26E242C3AF2F1007CF247 /* AirDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrop.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				50D7EFF22C3E484C005AC04E /* Info.plist */,
 				5043818C2C3A86EC000ED325 /* NotchDrop.entitlements */,
 				2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */,
+				508C4DF12C631EF700642ADC /* InfoPlist.xcstrings */,
 				504381872C3A86EC000ED325 /* Assets.xcassets */,
 				504381922C3A8755000ED325 /* main.swift */,
 				5043819A2C3A8A06000ED325 /* AppDelegate.swift */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508C4DF22C631EF700642ADC /* InfoPlist.xcstrings in Resources */,
 				504381882C3A86EC000ED325 /* Assets.xcassets in Resources */,
 				2700D8EE2C3CFD37005ACDDF /* Localizable.xcstrings in Resources */,
 			);
@@ -414,7 +418,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -422,13 +426,13 @@
 				INFOPLIST_FILE = NotchDrop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Lakr Aream. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -445,7 +449,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -453,13 +457,13 @@
 				INFOPLIST_FILE = NotchDrop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Lakr Aream. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.NotchDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -7,9 +7,11 @@
 
 import AppKit
 import Cocoa
+import LaunchAtLogin
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var isFirstOpen = true
+    var isLaunchedAtLogin = false
     var mainWindowController: NotchWindowController?
 
     var timer: Timer?
@@ -22,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             object: nil
         )
         NSApp.setActivationPolicy(.accessory)
+
+        isLaunchedAtLogin = LaunchAtLogin.wasLaunchedAtLogin
 
         _ = EventMonitors.shared
         let timer = Timer.scheduledTimer(
@@ -54,7 +58,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController = nil
         guard let mainScreen = findScreenFitsOurNeeds() else { return }
         mainWindowController = .init(screen: mainScreen)
-        if isFirstOpen { mainWindowController?.openAfterCreate = true }
+        if isFirstOpen, !isLaunchedAtLogin {
+            mainWindowController?.openAfterCreate = true
+        }
     }
 
     func determineIfProcessIdentifierMatches() {
