@@ -145,6 +145,7 @@ struct NotchView: View {
                 .onDrop(of: [.data], isTargeted: $dropTargeting) { _ in true }
                 .onChange(of: dropTargeting) { newValue in if newValue {
                     vm.notchOpen(.drag)
+                    vm.hapticSender.send()
                 } }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
