@@ -540,24 +540,24 @@
         }
       }
     },
-    "Haptic Feedback" : {
+    "Haptic Feedback: " : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Haptic Feedback"
+            "value" : "Haptic Feedback: "
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "触觉反馈"
+            "value" : "触觉反馈: "
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "觸覺回饋"
+            "value" : "觸覺回饋: "
           }
         }
       }
