@@ -146,7 +146,7 @@ struct NotchView: View {
                 if isTargeted && vm.status == .closed{
                     // Open the notch when a file is dragged over it
                     vm.notchOpen(.drag)
-                    vm.hapticSender.send()  // Optionally send haptic feedback
+                    vm.hapticSender.send()
                 } else if !isTargeted{
                     // Close the notch when the dragged item leaves the area
                     let mouseLocation: NSPoint = NSEvent.mouseLocation
