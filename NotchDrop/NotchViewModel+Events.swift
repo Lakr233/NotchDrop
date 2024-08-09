@@ -77,7 +77,9 @@ extension NotchViewModel {
             .throttle(for: .seconds(0.5), scheduler: DispatchQueue.main, latest: false)
             .sink { [weak self] _ in
                 guard NSEvent.pressedMouseButtons == 0 else { return }
-                self?.hapticSender.send()
+                if self?.hapticFeedback == true {  
+                    self?.hapticSender.send()
+                }
             }
             .store(in: &cancellables)
 
