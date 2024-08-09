@@ -66,7 +66,7 @@ struct NotchView: View {
                 ).animation(vm.animation)
             )
         }
-        .background(dragDetecter)
+        .background(dragDetector)
         .animation(vm.animation, value: vm.status)
         .preferredColorScheme(.dark)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -136,7 +136,7 @@ struct NotchView: View {
     }
 
     @ViewBuilder
-    var dragDetecter: some View {
+    var dragDetector: some View {
         RoundedRectangle(cornerRadius: notchCornerRadius)
             .foregroundStyle(Color.black.opacity(0.001))  // fuck you apple and 0.001 is the smallest we can have
             .contentShape(Rectangle())
