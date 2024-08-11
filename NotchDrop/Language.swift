@@ -10,6 +10,7 @@ import Cocoa
 enum Language: String, CaseIterable, Identifiable, Codable {
     case system = "Follow System"
     case english = "English"
+    case german = "German"
     case simplifiedChinese = "Simplified Chinese"
     case traditionalChinese = "Traditional Chinese"
 
@@ -37,6 +38,8 @@ enum Language: String, CaseIterable, Identifiable, Codable {
             }
         case .english:
             languageCode = "en"
+        case .german:
+            languageCode = "de"
         case .simplifiedChinese:
             languageCode = "zh-Hans"
         case .traditionalChinese:
