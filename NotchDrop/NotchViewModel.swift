@@ -76,7 +76,7 @@ class NotchViewModel: NSObject, ObservableObject {
 
     @PublishedPersist(key: "selectedLanguage", defaultValue: .system)
     var selectedLanguage: Language
-    
+
     @PublishedPersist(key: "hapticFeedback", defaultValue: true)
     var hapticFeedback: Bool
 

@@ -23,10 +23,13 @@ struct NotchSettingsView: View {
                 .pickerStyle(MenuPickerStyle())
                 .frame(width: vm.selectedLanguage == .simplifiedChinese || vm.selectedLanguage == .traditionalChinese ? 220 : 160)
 
+                Spacer()
                 LaunchAtLogin.Toggle {
                     Text(NSLocalizedString("Launch at Login", comment: ""))
                 }
-                .padding(.leading, 60) // Adjust the padding to reduce the space
+
+                Spacer()
+                Toggle("Haptic Feedback ", isOn: $vm.hapticFeedback)
 
                 Spacer()
             }
@@ -52,13 +55,6 @@ struct NotchSettingsView: View {
                     .pickerStyle(MenuPickerStyle())
                     .frame(width: 200)
                 }
-                Spacer()
-            }
-            
-            HStack {
-                Toggle("Haptic Feedback: ", isOn: $vm.hapticFeedback)
-                .toggleStyle(SwitchToggleStyle())
-                
                 Spacer()
             }
         }

@@ -1,3 +1,10 @@
+//
+//  TrayDrop+View.swift
+//  NotchDrop
+//
+//  Created by 秋星桥 on 2024/7/8.
+//
+
 import SwiftUI
 
 struct TrayView: View {
