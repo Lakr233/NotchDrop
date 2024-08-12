@@ -83,12 +83,14 @@ extension NotchViewModel {
 
         hapticSender
             .throttle(for: .seconds(0.5), scheduler: DispatchQueue.main, latest: false)
-            .sink { _ in
-                NSHapticFeedbackManager.defaultPerformer.perform(
-                    .levelChange,
-                    performanceTime: .now
-                )
-            }
+            .sink { [weak self] _ in
+                    if self?.hapticFeedback == true {
+                        NSHapticFeedbackManager.defaultPerformer.perform(
+                            .levelChange,
+                            performanceTime: .now
+                        )
+                    }
+                }
             .store(in: &cancellables)
 
         $status
