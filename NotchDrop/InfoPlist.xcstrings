@@ -3,12 +3,17 @@
   "strings" : {
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
-      "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "NotchDrop"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notch Drop"
           }
         },
         "zh-Hans" : {
@@ -35,6 +40,12 @@
             "value" : "NotchDrop"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notch Drop"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -56,6 +67,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Copyright © 2024 Lakr Aream. All rights reserved."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Copyright © 2024 Lakr Aream. All rights reserved."
           }
         },
