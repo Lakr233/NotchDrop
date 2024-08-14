@@ -219,6 +219,7 @@
 				Base,
 				"zh-Hans",
 				"zh-Hant",
+				ja,
 			);
 			mainGroup = 504381772C3A86EA000ED325;
 			packageReferences = (
