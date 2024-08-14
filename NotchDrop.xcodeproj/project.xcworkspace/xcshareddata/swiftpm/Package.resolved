@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Lakr233/ColorfulX",
       "state" : {
-        "revision" : "6f2223cd49ca498844647da167aedab875a59bc1",
-        "version" : "5.1.1"
+        "revision" : "1df46ade540c1bc3c5b207663bb127318458b12b",
+        "version" : "5.1.3"
       }
     },
     {
