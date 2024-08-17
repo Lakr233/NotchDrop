@@ -54,23 +54,33 @@ enum Language: String, CaseIterable, Identifiable, Codable {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             NSAlert.popRestart(
                 NSLocalizedString("The language has been changed. The app will restart for the changes to take effect.", comment: ""),
-                completion: restartApp
+                completion: relaunchApp
             )
         }
     }
 }
 
-private func restartApp() {
-    guard let appPath = Bundle.main.executablePath else { return }
-    NSApp.terminate(nil)
-
-    DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: appPath)
-        try? process.run()
-        exit(0)
-    }
+private func relaunchApp() {
+    let path = Bundle.main.bundlePath
+    let task = Process()
+    task.launchPath = "/usr/bin/open"
+    task.arguments = ["-n", path]
+    task.launch()
+    exit(0)
 }
+
+
+// private func restartApp() {
+//     guard let appPath = Bundle.main.executablePath else { return }
+//     NSApp.terminate(nil)
+
+//     DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+//         let process = Process()
+//         process.executableURL = URL(fileURLWithPath: appPath)
+//         try? process.run()
+//         exit(0)
+//     }
+// }
 
 private extension Bundle {
     private static var onLanguageDispatchOnce: () -> Void = {
