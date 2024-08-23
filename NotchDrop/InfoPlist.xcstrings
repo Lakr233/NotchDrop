@@ -10,6 +10,12 @@
             "value" : "NotchDrop"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchDrop"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -40,6 +46,12 @@
             "value" : "NotchDrop"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchDrop"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -67,6 +79,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Copyright © 2024 Lakr Aream. All rights reserved."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Copyright © 2024 Lakr Aream. All rights reserved."
           }
         },
