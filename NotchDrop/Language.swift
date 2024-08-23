@@ -74,7 +74,6 @@ private func relaunchApp() {
     exit(0)
 }
 
-
 // private func restartApp() {
 //     guard let appPath = Bundle.main.executablePath else { return }
 //     NSApp.terminate(nil)
