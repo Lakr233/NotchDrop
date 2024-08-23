@@ -35,13 +35,14 @@ struct NotchSettingsView: View {
             }
 
             HStack {
-                Picker("File Storage Time: ", selection: $tvm.selectedFileStorageTime) {
+                Text("File Storage Time: ")
+                Picker(String(), selection: $tvm.selectedFileStorageTime) {
                     ForEach(TrayDrop.FileStorageTime.allCases) { time in
                         Text(time.localized).tag(time)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .frame(width: 200)
+                .frame(width: 100)
                 if tvm.selectedFileStorageTime == .custom {
                     TextField("Days", value: $tvm.customStorageTime, formatter: NumberFormatter())
                         .textFieldStyle(RoundedBorderTextFieldStyle())

@@ -16,6 +16,12 @@
             "value" : "& Press Option to delete"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "& appuyer sur ••• puis \"Vider\" pour les supprimer"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -49,6 +55,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 Day"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Jour"
           }
         },
         "ja" : {
@@ -86,6 +98,12 @@
             "value" : "1 Hour"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Heure"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -119,6 +137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 Week"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Semaine"
           }
         },
         "ja" : {
@@ -156,6 +180,12 @@
             "value" : "2 Days"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 Jours"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -191,6 +221,12 @@
             "value" : "3 Days"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 Jours"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -220,6 +256,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "888888"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "888888"
@@ -259,6 +301,12 @@
             "value" : "a day"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "un jour"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -293,6 +341,12 @@
             "value" : "a week"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "une semaine"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -322,6 +376,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AirDrop"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "AirDrop"
@@ -361,6 +421,12 @@
             "value" : "AirDrop service not available"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le service Airdrop n'est pas disponible"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -395,6 +461,12 @@
             "value" : "an hour"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "une heure"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -427,6 +499,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vider"
           }
         },
         "ja" : {
@@ -464,6 +542,12 @@
             "value" : "Custom"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnalisé"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -496,6 +580,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Days"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jours"
           }
         },
         "ja" : {
@@ -533,6 +623,12 @@
             "value" : "Drag files here to keep them for"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glisser vos fichier ici pour les garder pendant"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -565,6 +661,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drag files here to keep them for %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glisser vos fichier ici pour les garder pendant %@"
           }
         },
         "ja" : {
@@ -602,6 +704,12 @@
             "value" : "English"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anglais"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -634,6 +742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
           }
         },
         "ja" : {
@@ -670,6 +784,12 @@
             "value" : "Exit"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitter"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -702,6 +822,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "File Storage Time: "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durée de stockage de fichier :"
           }
         },
         "ja" : {
@@ -739,6 +865,12 @@
             "value" : "Follow System"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Système"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -771,6 +903,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "forever"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pour toujours"
           }
         },
         "ja" : {
@@ -808,6 +946,12 @@
             "value" : "Forever"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour toujours"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -828,6 +972,47 @@
         }
       }
     },
+    "French" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Französisch"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "French"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Français"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フランス語"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "法语"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "法語"
+          }
+        }
+      }
+    },
     "German" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -841,6 +1026,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "German"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allemand"
           }
         },
         "ja" : {
@@ -875,6 +1066,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Haptic Feedback"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retour haptique"
           }
         },
         "ja" : {
@@ -912,6 +1109,12 @@
             "value" : "Hours"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heures"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -947,6 +1150,12 @@
             "value" : "Japanese"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japonais"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -979,6 +1188,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Language: "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langue :"
           }
         },
         "ja" : {
@@ -1016,6 +1231,12 @@
             "value" : "Later"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus tard"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1051,6 +1272,12 @@
             "value" : "Launch at Login"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lancer au démarrage"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1071,6 +1298,47 @@
         }
       }
     },
+    "Love Drop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love Drop"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love Drop"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soutenir"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love Drop"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喜爱"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喜愛"
+          }
+        }
+      }
+    },
     "Months" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1084,6 +1352,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Months"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mois"
           }
         },
         "ja" : {
@@ -1121,6 +1395,12 @@
             "value" : "Need Restart"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besoin de redémarrer"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1150,6 +1430,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notch Drop"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notch Drop"
@@ -1189,6 +1475,12 @@
             "value" : "OK"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1221,6 +1513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "One or more files failed to load"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un ou plusieurs fichier n'ont pas été chargés"
           }
         },
         "ja" : {
@@ -1257,6 +1555,12 @@
             "value" : "Press Option to delete"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyer sur ••• puis \"Vider\" pour les supprimer"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1289,6 +1593,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres"
           }
         },
         "ja" : {
@@ -1326,6 +1636,12 @@
             "value" : "Simplified Chinese"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinois Simplifié"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1359,6 +1675,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The language has been changed. The app will restart for the changes to take effect."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La langue a été changé. L'application va redémarrer pour que les changements prennent effet."
           }
         },
         "ja" : {
@@ -1395,6 +1717,12 @@
             "value" : "three days"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "trois jours"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1427,6 +1755,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Time Unit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unité de temps"
           }
         },
         "ja" : {
@@ -1464,6 +1798,12 @@
             "value" : "Traditional Chinese"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinois Traditionnel"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1498,6 +1838,12 @@
             "value" : "two days"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "deux jours"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1529,6 +1875,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Version: %1$@ (Build: %2$@)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Version: %1$@ (Build: %2$@)"
           }
         },
@@ -1567,6 +1919,12 @@
             "value" : "Weeks"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semaines"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1600,6 +1958,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Years"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Années"
           }
         },
         "ja" : {
