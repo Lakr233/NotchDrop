@@ -14,6 +14,7 @@ enum Language: String, CaseIterable, Identifiable, Codable {
     case simplifiedChinese = "Simplified Chinese"
     case traditionalChinese = "Traditional Chinese"
     case japanese = "Japanese"
+    case french = "French"
 
     var id: String { rawValue }
 
@@ -34,6 +35,8 @@ enum Language: String, CaseIterable, Identifiable, Codable {
                 languageCode = "zh-Hant"
             } else if region == "CN" {
                 languageCode = "zh-Hans"
+            } else if region == "FR" {
+                languageCode = "fr"
             } else {
                 languageCode = "en"
             }
@@ -47,6 +50,8 @@ enum Language: String, CaseIterable, Identifiable, Codable {
             languageCode = "zh-Hant"
         case .japanese:
             languageCode = "ja"
+        case .french:
+            languageCode = "fr"
         }
 
         Bundle.setLanguage(languageCode)
