@@ -1,6 +1,6 @@
 # NotchDrop
 
-Transform your MacBook's notch into a convenient file drop zone.
+Transform your MacBook's notch into a convenient file drop zone. (Free of charge, I did it for you)
 
 [简体中文 🇨🇳](./Resources/i18n/zh-Hans/README.md)
 
@@ -19,7 +19,6 @@ Transform your MacBook's notch into a convenient file drop zone.
 - [x] Open files with a simple click
 - [x] Delete files by holding the option key and clicking the x mark
 - [x] Fully open source and privacy-focused
-- [x] Free of charge if you do it yourself
 
 ## 🚀 Usage
 
