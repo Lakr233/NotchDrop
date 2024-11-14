@@ -86,6 +86,7 @@ class NotchViewModel: NSObject, ObservableObject {
         openReason = reason
         status = .opened
         contentType = .normal
+        NSApp.activate(ignoringOtherApps: true)
     }
 
     func notchClose() {
