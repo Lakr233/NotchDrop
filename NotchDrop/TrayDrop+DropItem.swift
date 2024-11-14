@@ -6,8 +6,10 @@
 //
 
 import Cocoa
+import CoreTransferable
 import Foundation
 import QuickLook
+import UniformTypeIdentifiers
 
 extension TrayDrop {
     struct DropItem: Identifiable, Codable, Equatable, Hashable {
@@ -35,6 +37,23 @@ extension TrayDrop {
             )
             try FileManager.default.copyItem(at: url, to: storageURL)
         }
+    }
+}
+
+extension TrayDrop.DropItem: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        let exportingBehavior: @Sendable (TrayDrop.DropItem) async throws -> SentTransferredFile = { input in
+            .init(input.storageURL, allowAccessingOriginalFile: false)
+        }
+        let importingBehavior: @Sendable (ReceivedTransferredFile) async throws -> TrayDrop.DropItem = { _ in
+            fatalError()
+        }
+        return FileRepresentation(
+            contentType: .data,
+            shouldAttemptToOpenInPlace: true,
+            exporting: exportingBehavior,
+            importing: importingBehavior
+        )
     }
 }
 

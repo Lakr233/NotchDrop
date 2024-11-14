@@ -37,7 +37,7 @@ struct DropItemView: View {
         .onHover { hover = $0 }
         .scaleEffect(hover ? 1.05 : 1.0)
         .animation(vm.animation, value: hover)
-        .onDrag { NSItemProvider(contentsOf: item.storageURL) ?? .init() }
+        .draggable(item)
         .onTapGesture {
             guard !vm.optionKeyPressed else { return }
             vm.notchClose()
