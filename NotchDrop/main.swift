@@ -55,6 +55,23 @@ do {
 _ = TrayDrop.shared
 TrayDrop.shared.cleanExpiredFiles()
 
+repeat {
+    let executablePath = ProcessInfo.processInfo.arguments.first!
+    let selfHandle = open(executablePath, O_EVTONLY)
+    guard selfHandle > 0 else { break }
+    
+    let monitorSource = DispatchSource.makeFileSystemObjectSource(
+        fileDescriptor: selfHandle,
+        eventMask: .delete
+    )
+    monitorSource.setEventHandler {
+        guard monitorSource.data == .delete else { return }
+        monitorSource.cancel()
+        exit(0)
+    }
+    monitorSource.resume()
+} while false
+
 private let delegate = AppDelegate()
 NSApplication.shared.delegate = delegate
 _ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
