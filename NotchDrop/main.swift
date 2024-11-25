@@ -59,7 +59,7 @@ repeat {
     let executablePath = ProcessInfo.processInfo.arguments.first!
     let selfHandle = open(executablePath, O_EVTONLY)
     guard selfHandle > 0 else { break }
-    
+
     let monitorSource = DispatchSource.makeFileSystemObjectSource(
         fileDescriptor: selfHandle,
         eventMask: .delete
