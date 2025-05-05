@@ -368,6 +368,7 @@
       }
     },
     "AirDrop" : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -408,6 +409,7 @@
       }
     },
     "AirDrop service not available" : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1621,6 +1623,9 @@
         }
       }
     },
+    "Selected sharing service not available" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "de" : {
@@ -1660,6 +1665,44 @@
           }
         }
       }
+    },
+    "Share" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teilen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共享"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享"
+          }
+        }
+      }
+    },
+    "Sharing service cannot perform with given files" : {
+
     },
     "Simplified Chinese" : {
       "extractionState" : "manual",
