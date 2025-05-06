@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148901532DC9149900F2E06C /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148901512DC9149900F2E06C /* Share.swift */; };
+		148901542DC9149900F2E06C /* Share+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148901522DC9149900F2E06C /* Share+View.swift */; };
 		2700D8EE2C3CFD37005ACDDF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */; };
 		501F0E8C2C59E6BD00F0113C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501F0E8B2C59E6BD00F0113C /* Language.swift */; };
 		502E41D62C3CEC990060660E /* Ext+NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502E41D52C3CEC990060660E /* Ext+NSAlert.swift */; };
@@ -25,7 +27,6 @@
 		504381AC2C3A95BD000ED325 /* EventMonitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504381AB2C3A95BD000ED325 /* EventMonitors.swift */; };
 		504381AF2C3ADFF2000ED325 /* NotchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504381AE2C3ADFF2000ED325 /* NotchContentView.swift */; };
 		504381B12C3AE0B6000ED325 /* NotchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504381B02C3AE0B6000ED325 /* NotchHeaderView.swift */; };
-		5044EE972C3B063400071C5C /* AirDrop+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044EE962C3B063400071C5C /* AirDrop+View.swift */; };
 		5044EE992C3B069200071C5C /* TrayDrop+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044EE982C3B069200071C5C /* TrayDrop+View.swift */; };
 		5044EE9C2C3B082300071C5C /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 5044EE9B2C3B082300071C5C /* Pow */; };
 		5044EE9E2C3B0F3D00071C5C /* Ext+FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044EE9D2C3B0F3D00071C5C /* Ext+FileProvider.swift */; };
@@ -40,7 +41,6 @@
 		504A5D802C59EC2D004E8297 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 504A5D7F2C59EC2D004E8297 /* LaunchAtLogin */; };
 		508C4DF22C631EF700642ADC /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 508C4DF12C631EF700642ADC /* InfoPlist.xcstrings */; };
 		50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */; };
-		50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E242C3AF2F1007CF247 /* AirDrop.swift */; };
 		50E26E272C3AF5E9007CF247 /* TrayDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E262C3AF5E9007CF247 /* TrayDrop.swift */; };
 		50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */; };
 		50EFDB522C3BF7B4002D3E0F /* Ext+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */; };
@@ -48,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		148901512DC9149900F2E06C /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		148901522DC9149900F2E06C /* Share+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Share+View.swift"; sourceTree = "<group>"; };
 		2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		501F0E8B2C59E6BD00F0113C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		502E41D52C3CEC990060660E /* Ext+NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSAlert.swift"; sourceTree = "<group>"; };
@@ -67,7 +69,6 @@
 		504381AB2C3A95BD000ED325 /* EventMonitors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitors.swift; sourceTree = "<group>"; };
 		504381AE2C3ADFF2000ED325 /* NotchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchContentView.swift; sourceTree = "<group>"; };
 		504381B02C3AE0B6000ED325 /* NotchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchHeaderView.swift; sourceTree = "<group>"; };
-		5044EE962C3B063400071C5C /* AirDrop+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirDrop+View.swift"; sourceTree = "<group>"; };
 		5044EE982C3B069200071C5C /* TrayDrop+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+View.swift"; sourceTree = "<group>"; };
 		5044EE9D2C3B0F3D00071C5C /* Ext+FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+FileProvider.swift"; sourceTree = "<group>"; };
 		5044EE9F2C3B116000071C5C /* PublishedPersist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedPersist.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		508C4DF12C631EF700642ADC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotchViewModel+Events.swift"; sourceTree = "<group>"; };
 		50D7EFF22C3E484C005AC04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		50E26E242C3AF2F1007CF247 /* AirDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrop.swift; sourceTree = "<group>"; };
 		50E26E262C3AF5E9007CF247 /* TrayDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayDrop.swift; sourceTree = "<group>"; };
 		50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrayDrop+DropItem.swift"; sourceTree = "<group>"; };
 		50EFDB512C3BF7B4002D3E0F /* Ext+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+NSImage.swift"; sourceTree = "<group>"; };
@@ -122,6 +122,8 @@
 		504381822C3A86EA000ED325 /* NotchDrop */ = {
 			isa = PBXGroup;
 			children = (
+				148901512DC9149900F2E06C /* Share.swift */,
+				148901522DC9149900F2E06C /* Share+View.swift */,
 				50D7EFF22C3E484C005AC04E /* Info.plist */,
 				5043818C2C3A86EC000ED325 /* NotchDrop.entitlements */,
 				2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */,
@@ -142,8 +144,6 @@
 				50CB767D2C3BC8880070D5E6 /* NotchViewModel+Events.swift */,
 				504381A92C3A9514000ED325 /* EventMonitor.swift */,
 				504381AB2C3A95BD000ED325 /* EventMonitors.swift */,
-				50E26E242C3AF2F1007CF247 /* AirDrop.swift */,
-				5044EE962C3B063400071C5C /* AirDrop+View.swift */,
 				50E26E262C3AF5E9007CF247 /* TrayDrop.swift */,
 				50E26E282C3AF67B007CF247 /* TrayDrop+DropItem.swift */,
 				5044EE982C3B069200071C5C /* TrayDrop+View.swift */,
@@ -268,8 +268,6 @@
 				504381B12C3AE0B6000ED325 /* NotchHeaderView.swift in Sources */,
 				50E26E292C3AF67B007CF247 /* TrayDrop+DropItem.swift in Sources */,
 				504381A22C3A8BE0000ED325 /* Ext+NSScreen.swift in Sources */,
-				5044EE972C3B063400071C5C /* AirDrop+View.swift in Sources */,
-				50E26E252C3AF2F1007CF247 /* AirDrop.swift in Sources */,
 				5044EEA42C3B140F00071C5C /* Ext+URL.swift in Sources */,
 				5044EE992C3B069200071C5C /* TrayDrop+View.swift in Sources */,
 				50CB767E2C3BC8880070D5E6 /* NotchViewModel+Events.swift in Sources */,
@@ -279,6 +277,8 @@
 				504381AA2C3A9514000ED325 /* EventMonitor.swift in Sources */,
 				501F0E8C2C59E6BD00F0113C /* Language.swift in Sources */,
 				5043819B2C3A8A06000ED325 /* AppDelegate.swift in Sources */,
+				148901532DC9149900F2E06C /* Share.swift in Sources */,
+				148901542DC9149900F2E06C /* Share+View.swift in Sources */,
 				504381932C3A8755000ED325 /* main.swift in Sources */,
 				60AD62872C579F4400299297 /* NotchSettingsView.swift in Sources */,
 				504381A82C3A926E000ED325 /* NotchViewModel.swift in Sources */,
