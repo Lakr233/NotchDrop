@@ -7,37 +7,37 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "& drücke option zum Löschen"
+            "value" : "& drücke ⌥ zum Löschen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "& Press Option to delete"
+            "value" : "& Press ⌥ to delete"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "& appuyer sur ••• puis \"Vider\" pour les supprimer"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "& オプションを押して削除"
+            "value" : "& ⌥を押して削除"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "& 按 Option键删除"
+            "value" : "& 按⌥键删除"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "& 按下選項鍵以刪除"
+            "value" : "& 按下⌥以刪除"
           }
         }
       }
@@ -66,7 +66,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1日"
+            "value" : "1日間"
           }
         },
         "zh-Hans" : {
@@ -189,7 +189,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "2日"
+            "value" : "2日間"
           }
         },
         "zh-Hans" : {
@@ -230,7 +230,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "3日"
+            "value" : "3日間"
           }
         },
         "zh-Hans" : {
@@ -310,7 +310,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "一日"
+            "value" : "一日間"
           }
         },
         "zh-Hans" : {
@@ -350,7 +350,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1週間"
+            "value" : "一週間"
           }
         },
         "zh-Hans" : {
@@ -391,7 +391,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "エアドロップ"
+            "value" : "AirDrop"
           }
         },
         "zh-Hans" : {
@@ -512,7 +512,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "クリア"
+            "value" : "消去"
           }
         },
         "zh-Hans" : {
@@ -593,7 +593,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日々"
+            "value" : "日間"
           }
         },
         "zh-Hans" : {
@@ -634,7 +634,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ファイルをここにドラッグして保持してください"
+            "value" : "ファイルをここにドラッグして保存します"
           }
         },
         "zh-Hans" : {
@@ -674,7 +674,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ファイルをここにドラッグして保持してください %@"
+            "value" : "ファイルをここにドラッグすると、%@ 保存されます"
           }
         },
         "zh-Hans" : {
@@ -795,7 +795,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "出口"
+            "value" : "終了"
           }
         },
         "zh-Hans" : {
@@ -1119,7 +1119,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ハプティックフィードバック"
+            "value" : "振動フィードバック"
           }
         },
         "zh-Hans" : {
@@ -1405,7 +1405,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "月々"
+            "value" : "月間"
           }
         },
         "zh-Hans" : {
@@ -1588,43 +1588,62 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drücke Option zum Löschen"
+            "value" : "Drücke ⌥ zum Löschen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Press Option to delete"
+            "value" : "Press ⌥ to delete"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Appuyer sur ••• puis \"Vider\" pour les supprimer"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "削除するにはオプションキーを押してください"
+            "value" : "⌥を押すと削除できます"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "按住 Option 键删除"
+            "value" : "按住⌥键删除"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "按住 Option 鍵刪除"
+            "value" : "按住⌥鍵刪除"
           }
         }
       }
     },
     "Selected sharing service not available" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択した共有サービスは利用できません"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择的分享服务不可用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所選共享服務不可用"
+          }
+        }
+      }
     },
     "Settings" : {
       "localizations" : {
@@ -1702,7 +1721,26 @@
       }
     },
     "Sharing service cannot perform with given files" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "指定されたファイルでは共有サービスを実行できません"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享服务无法处理指定的文件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共享服務無法執行給定的檔案"
+          }
+        }
+      }
     },
     "Simplified Chinese" : {
       "extractionState" : "manual",
@@ -1728,7 +1766,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "簡体字中国語"
+            "value" : "中国語（簡体字）"
           }
         },
         "zh-Hans" : {
@@ -1769,7 +1807,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "言語が変更されました。変更を適用するためにアプリが再起動します。"
+            "value" : "言語が変更されました。変更を適用するため、アプリが終了して再起動します。"
           }
         },
         "zh-Hans" : {
@@ -1809,7 +1847,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "三日"
+            "value" : "三日間"
           }
         },
         "zh-Hans" : {
@@ -1890,7 +1928,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "伝統的な中国語"
+            "value" : "中国語（繁体字）"
           }
         },
         "zh-Hans" : {
@@ -1930,7 +1968,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "二日"
+            "value" : "二日間"
           }
         },
         "zh-Hans" : {
@@ -2052,7 +2090,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "年数"
+            "value" : "年間"
           }
         },
         "zh-Hans" : {
