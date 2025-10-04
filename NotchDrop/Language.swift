@@ -74,18 +74,6 @@ private func relaunchApp() {
     exit(0)
 }
 
-// private func restartApp() {
-//     guard let appPath = Bundle.main.executablePath else { return }
-//     NSApp.terminate(nil)
-
-//     DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-//         let process = Process()
-//         process.executableURL = URL(fileURLWithPath: appPath)
-//         try? process.run()
-//         exit(0)
-//     }
-// }
-
 private extension Bundle {
     private static var onLanguageDispatchOnce: () -> Void = {
         object_setClass(Bundle.main, PrivateBundle.self)
@@ -103,7 +91,7 @@ private extension Bundle {
     }
 }
 
-private class PrivateBundle: Bundle {
+private class PrivateBundle: Bundle, @unchecked Sendable {
     override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
         guard let languages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String],
               let languageCode = languages.first,

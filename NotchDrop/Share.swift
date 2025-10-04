@@ -27,7 +27,7 @@ class Share: NSObject, NSSharingServiceDelegate {
     }
 
     private func sendEx(_ files: [URL]) throws {
-        if let serviceName = serviceName {
+        if let serviceName {
             guard let service = NSSharingService(named: serviceName) else {
                 throw NSError(domain: "ShareService", code: 1, userInfo: [
                     NSLocalizedDescriptionKey: NSLocalizedString("Selected sharing service not available", comment: ""),

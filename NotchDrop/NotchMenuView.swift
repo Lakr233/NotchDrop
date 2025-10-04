@@ -50,7 +50,7 @@ struct NotchMenuView: View {
 
     var settings: some View {
         ColorButton(
-            color: ColorfulPreset.colorful.colors,
+            color: ColorfulPreset.colorful.colors.map { .init($0) },
             image: Image(systemName: "gear"),
             title: LocalizedStringKey("Settings")
         )

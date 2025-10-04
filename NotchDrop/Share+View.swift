@@ -18,38 +18,38 @@ struct ShareView: View {
 
         var imageName: String {
             switch self {
-            case .airdrop: return "airplayaudio"
-            case .generic: return "arrow.up.circle"
+            case .airdrop: "airplayaudio"
+            case .generic: "arrow.up.circle"
             }
         }
 
         var title: String {
             switch self {
-            case .airdrop: return NSLocalizedString("AirDrop", comment: "AirDrop sharing title")
-            case .generic: return NSLocalizedString("Share", comment: "Generic sharing title")
+            case .airdrop: NSLocalizedString("AirDrop", comment: "AirDrop sharing title")
+            case .generic: NSLocalizedString("Share", comment: "Generic sharing title")
             }
         }
 
-        var service: ( [URL] ) -> Share {
+        var service: ([URL]) -> Share {
             switch self {
             case .airdrop:
-                return { urls in Share(files: urls, serviceName: .sendViaAirDrop) }
+                { urls in Share(files: urls, serviceName: .sendViaAirDrop) }
             case .generic:
-                return { urls in Share(files: urls) }
+                { urls in Share(files: urls) }
             }
         }
 
         var colorfulPresetTargeting: ColorfulPreset {
             switch self {
-            case .airdrop: return .neon
-            case .generic: return .sunset
+            case .airdrop: .neon
+            case .generic: .sunset
             }
         }
 
         var colorfulPresetNormal: ColorfulPreset {
             switch self {
-            case .airdrop: return .aurora
-            case .generic: return .sunrise
+            case .airdrop: .aurora
+            case .generic: .sunrise
             }
         }
     }
@@ -72,18 +72,18 @@ struct ShareView: View {
             }
     }
 
+    var dropAreaColors: [NSColor] {
+        if targeting {
+            type.colorfulPresetTargeting.colors
+        } else {
+            type.colorfulPresetNormal.colors
+        }
+    }
+
     var dropArea: some View {
         ColorfulView(
-            color: .init(get: {
-                if targeting {
-                    type.colorfulPresetTargeting.colors
-                } else {
-                    type.colorfulPresetNormal.colors
-                }
-            }, set: { _ in }),
-            speed: .init(get: {
-                targeting ? 1.5 : 0
-            }, set: { _ in }),
+            color: .init(get: { dropAreaColors.map { Color($0) } }, set: { _ in }),
+            speed: .init(get: { targeting ? 1.5 : 0 }, set: { _ in }),
             transitionSpeed: .constant(25)
         )
         .opacity(0.5)

@@ -19,7 +19,6 @@ struct NotchContentView: View {
             case .normal:
                 HStack(spacing: vm.spacing) {
                     ShareView(vm: vm, type: .airdrop)
-                    ShareView(vm: vm, type: .generic)
                     TrayView(vm: vm)
                 }
                 .transition(.scale(scale: 0.8).combined(with: .opacity))
