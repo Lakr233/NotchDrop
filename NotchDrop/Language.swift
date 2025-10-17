@@ -54,6 +54,13 @@ enum Language: String, CaseIterable, Identifiable, Codable {
             languageCode = "fr"
         }
 
+        let currentLanguages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String]
+        let currentLanguageCode = currentLanguages?.first
+        
+        if currentLanguageCode == languageCode {
+            return
+        }
+
         Bundle.setLanguage(languageCode)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
