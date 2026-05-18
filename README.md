@@ -98,10 +98,10 @@ Then build and run using Xcode (⌘R).
 
 Special thanks to [NotchNook](https://lo.cafe/notchnook) for providing the initial inspiration. This open-source project focuses more on my own needs, simplifies various configurations, and improves compatibility with the software I prefer.
 
----
-
-Copyright © 2024 Lakr Aream. All Rights Reserved.
-
 ## Sponsor
 
 [LookInside](https://lookinside-app.com/) helps you inspect a running iOS or macOS app UI from your Mac.
+
+---
+
+Copyright © 2024 Lakr Aream. All Rights Reserved.
