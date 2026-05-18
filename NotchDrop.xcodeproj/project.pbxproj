@@ -10,6 +10,7 @@
 		148901532DC9149900F2E06C /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148901512DC9149900F2E06C /* Share.swift */; };
 		148901542DC9149900F2E06C /* Share+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148901522DC9149900F2E06C /* Share+View.swift */; };
 		2700D8EE2C3CFD37005ACDDF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2700D8ED2C3CFD37005ACDDF /* Localizable.xcstrings */; };
+		47D3508A19FEBF9C05FB4210 /* LookInsideServer in Frameworks */ = {isa = PBXBuildFile; productRef = FCA8014702703782FB473265 /* LookInsideServer */; };
 		501F0E8C2C59E6BD00F0113C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501F0E8B2C59E6BD00F0113C /* Language.swift */; };
 		502E41D62C3CEC990060660E /* Ext+NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502E41D52C3CEC990060660E /* Ext+NSAlert.swift */; };
 		503D8EBA2C3F838200E173FF /* NotchMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D8EB92C3F838200E173FF /* NotchMenuView.swift */; };
@@ -96,6 +97,7 @@
 				5044EEA92C3B174100071C5C /* Collections in Frameworks */,
 				504A5D802C59EC2D004E8297 /* LaunchAtLogin in Frameworks */,
 				5044EEA72C3B174100071C5C /* BitCollections in Frameworks */,
+				47D3508A19FEBF9C05FB4210 /* LookInsideServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +192,7 @@
 				5044EEAC2C3B174100071C5C /* HashTreeCollections */,
 				5044EEAE2C3B174100071C5C /* HeapModule */,
 				504A5D7F2C59EC2D004E8297 /* LaunchAtLogin */,
+				FCA8014702703782FB473265 /* LookInsideServer */,
 			);
 			productName = NotchDrop;
 			productReference = 504381802C3A86EA000ED325 /* NotchDrop.app */;
@@ -228,6 +231,7 @@
 				5044EE9A2C3B082300071C5C /* XCRemoteSwiftPackageReference "Pow" */,
 				5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */,
 				504A5D7E2C59EC2D004E8297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				0D0639E6F8CE7937970B1241 /* XCRemoteSwiftPackageReference "LookInside-Release" */,
 			);
 			productRefGroup = 504381812C3A86EA000ED325 /* Products */;
 			projectDirPath = "";
@@ -469,6 +473,10 @@
 				ENABLE_POINTER_AUTHENTICATION = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					"$(inherited)",
+					"LookInsideServer*",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotchDrop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotchDrop;
@@ -511,6 +519,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0D0639E6F8CE7937970B1241 /* XCRemoteSwiftPackageReference "LookInside-Release" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LookInsideApp/LookInside-Release.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
 		5043819C2C3A8ACA000ED325 /* XCRemoteSwiftPackageReference "ColorfulX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Lakr233/ColorfulX";
@@ -524,7 +540,7 @@
 			repositoryURL = "https://github.com/EmergeTools/Pow";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
+				minimumVersion = 1.0.6;
 			};
 		};
 		5044EEA52C3B174100071C5C /* XCRemoteSwiftPackageReference "swift-collections" */ = {
@@ -585,6 +601,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 504A5D7E2C59EC2D004E8297 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
+		};
+		FCA8014702703782FB473265 /* LookInsideServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D0639E6F8CE7937970B1241 /* XCRemoteSwiftPackageReference "LookInside-Release" */;
+			productName = LookInsideServer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

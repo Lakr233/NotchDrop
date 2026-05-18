@@ -1,5 +1,5 @@
 {
-  "originHash" : "f0d4037b316e691fefb0ff41167e80ee122ba1766331e69b36ecf83a7408b0fc",
+  "originHash" : "2c6e4958ee182486a6f228509e8440f1d708efe0845447990c356fb99aee9e15",
   "pins" : [
     {
       "identity" : "colorfulx",
@@ -29,6 +29,15 @@
       }
     },
     {
+      "identity" : "lookinside-release",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LookInsideApp/LookInside-Release.git",
+      "state" : {
+        "revision" : "7514cfa8bd24a78f74d8b982c429e7d61ef58134",
+        "version" : "0.2.2"
+      }
+    },
+    {
       "identity" : "msdisplaylink",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Lakr233/MSDisplayLink.git",
@@ -42,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/EmergeTools/Pow",
       "state" : {
-        "revision" : "a504eb6d144bcf49f4f33029a2795345cb39e6b4",
-        "version" : "1.0.5"
+        "revision" : "1b4b1dda28c50b95f0872927ee2226fe8b58950e",
+        "version" : "1.0.6"
       }
     },
     {
